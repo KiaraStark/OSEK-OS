@@ -37,16 +37,16 @@
 
 
 //task quantity (including the idle task)
-#define		OCC_NTSKS		5
+#define		OCC_NTSKS		15
 
 //maximum number of ready tasks
-#define		OCC_TOTALACTIVENUMBER		5
+#define		OCC_TOTALACTIVENUMBER		15
 
 
 
 //COUNTER quantity
-#define		OCC_NCTRS		1	  	//Counter×ÜÊý
-#define		OCC_COUNTER				//Ê¹ÓÃCounterµÄ¿ª¹Ø
+#define		OCC_NCTRS		1	  	//Counterï¿½ï¿½ï¿½ï¿½
+#define		OCC_COUNTER				//Ê¹ï¿½ï¿½Counterï¿½Ä¿ï¿½ï¿½ï¿½
 
 
 

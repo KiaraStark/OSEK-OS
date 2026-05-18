@@ -302,7 +302,7 @@ const		T_OSEK_TASK_ConfigTable_Struct		osekConfig_TaskTable[OCC_NTSKS]=
 	/*Task1	ID:0 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-0-1 */
 	{
 		(T_OSEK_TASK_Entry)FuncTask1,  				//task function
-		Task1,										//task ID 
+		Task1,									//task ID 
 		0 | OSEK_TASK_ACTIVE | OSEK_TASK_EXTENDED,  //task initial attributes
 		&taskStack[Task1][TASK_STACK_SIZE-1],		//top of the task stack
 		&taskStack[Task1][0]						//bottom of the task stack
@@ -323,7 +323,95 @@ const		T_OSEK_TASK_ConfigTable_Struct		osekConfig_TaskTable[OCC_NTSKS]=
 		0 | OSEK_TASK_EXTENDED,
 		&taskStack[Task3][TASK_STACK_SIZE-1],
 		&taskStack[Task3][0]
-	},		
+	},
+	/*Task4	ID:3 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-3-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask4,  
+		Task4,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task4][TASK_STACK_SIZE-1],
+		&taskStack[Task4][0]
+	},
+	/*Task5	ID:4 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-4-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask5,  
+		Task5,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task5][TASK_STACK_SIZE-1],
+		&taskStack[Task5][0]
+	},
+	/*Task6	ID:5 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-5-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask6,  
+		Task6,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task6][TASK_STACK_SIZE-1],
+		&taskStack[Task6][0]
+	},
+	/*Task7	ID:6 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-6-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask7,  
+		Task7,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task7][TASK_STACK_SIZE-1],
+		&taskStack[Task7][0]
+	},
+	/*Task8	ID:7 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-7-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask8,  
+		Task8,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task8][TASK_STACK_SIZE-1],
+		&taskStack[Task8][0]
+	},
+	/*Task9	ID:8 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-8-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask9,  
+		Task9,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task9][TASK_STACK_SIZE-1],
+		&taskStack[Task9][0]
+	},
+	/*Task10 ID:9 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-9-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask10,  
+		Task10,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task10][TASK_STACK_SIZE-1],
+		&taskStack[Task10][0]
+	},
+	/*Task11 ID:10 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-10-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask11,  
+		Task11,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task11][TASK_STACK_SIZE-1],
+		&taskStack[Task11][0]
+	},
+	/*Task12 ID:11 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-11-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask12,  
+		Task12,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task12][TASK_STACK_SIZE-1],
+		&taskStack[Task12][0]
+	},
+	/*Task13 ID:12 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-12-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask13,  
+		Task13,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task13][TASK_STACK_SIZE-1],
+		&taskStack[Task13][0]
+	},
+	/*Task14 ID:13 priority:CONFIG_OSEK_TASK_PRIORITY_NUMBER-13-1 */
+	{
+		(T_OSEK_TASK_Entry)FuncTask14,  
+		Task14,
+		0 | OSEK_TASK_EXTENDED,
+		&taskStack[Task14][TASK_STACK_SIZE-1],
+		&taskStack[Task14][0]
+	},
 	/*Task Idle*/
 	{
 		(T_OSEK_TASK_Entry)FuncIdle, 
