@@ -25,7 +25,9 @@ int main(int argc ,char *argv[])
   //volatile int x=sizeof(OSDWORD);
 
 
- 	BSP_UartInit(); 	
+	//初始化串口
+ 	BSP_UartInit();
+	//初始化定时器 	
 	BSP_TimerInit();
 	EnableInterrupts;
 	//showLogo();
