@@ -52,8 +52,8 @@
 
 
 //ALARM quantity
-#define		OCC_NALMS		1
-#define		OCC_ALARM
+#define		OCC_NALMS		4
+#define		OCC_ALARM       4
 
 
 #define		OCC_ALMACTIVTASK

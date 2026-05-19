@@ -39,12 +39,15 @@
 
 
 //task quantity (including the idle task)
-#define		OCC_NTSKS		8
+#define		OCC_NTSKS		11
 
 //maximum number of ready tasks
-#define		OCC_TOTALACTIVENUMBER		8
+#define		OCC_TOTALACTIVENUMBER		11
 
-
+//enables resource management
+#define		OCC_RESOURCE
+//resource quantity
+#define		OCC_NALLRES		3
 
 //COUNTER quantity
 #define		OCC_NCTRS		1
@@ -53,17 +56,19 @@
 
 
 //ALARM quantity
-#define		OCC_NALMS		1
+#define		OCC_NALMS		8
 #define		OCC_ALARM
 
 
 #define		OCC_ALMACTIVTASK
 
+#define		OCC_ALMSETEVENT
+
 
 
 #define	OCC_LOCALMESSAGESONLY
 
-//#define	OCC_SIGACTIVTASK
+#define	OCC_SIGACTIVTASK
 
 
 #if defined (OCC_LOCALMESSAGESONLY)
@@ -73,7 +78,7 @@
 #define		OCC_NFLAGS		0
 
 //total number of queued messages
-#define		OCC_NQUEMSGS		1
+#define		OCC_NQUEMSGS		0
 
 
 #endif  /* OCC_LOCALMESSAGESONLY */
@@ -82,6 +87,3 @@
 
 
 #endif/*	ifndef OCC_OSPROP_H	*/
-
-
-
