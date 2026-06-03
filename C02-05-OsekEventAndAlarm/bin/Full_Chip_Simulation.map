@@ -1,5 +1,5 @@
 *** EVALUATION ***
-PROGRAM "D:\yanyixia\qianrushi\ÊµÑé´úÂë\C02-05-OsekEventAndAlarm\bin\Full_Chip_Simulation.abs"
+PROGRAM "D:\yanyixia\qianrushi\code\C02-06\bin\Full_Chip_Simulation.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -38,7 +38,7 @@ _startupData is allocated at 0xC00B and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x2200     4056
-  _Copy    *toCopyDownBeg 0xD198
+  _Copy    *toCopyDownBeg 0xD182
 } _startupData;
 
 *********************************************************************************************
@@ -48,10 +48,10 @@ Section Name                    Size  Type     From       To       Segment
 .init                             11     R     0xC000     0xC00A   ROM_C000
 .startData                        66     R     0xC00B     0xC04C   ROM_C000
 .rodata                          248     R     0xC04D     0xC144   ROM_C000
-.rodata1                        2756     R     0xC145     0xCC08   ROM_C000
-NON_BANKED                      1423     R     0xCC09     0xD197   ROM_C000
-.copy                            488     R     0xD198     0xD37F   ROM_C000
-.text                           5255     R   0xFE8000   0xFE9486   PAGE_FE
+.rodata1                        2729     R     0xC145     0xCBED   ROM_C000
+NON_BANKED                      1428     R     0xCBEE     0xD181   ROM_C000
+.copy                            488     R     0xD182     0xD369   ROM_C000
+.text                           5647     R   0xFE8000   0xFE960E   PAGE_FE
 .stack                           512   R/W     0x2000     0x21FF   RAM
 .data                            858   R/W     0x2200     0x2559   RAM
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
@@ -912,7 +912,7 @@ NON_BANKED                      1423     R     0xCC09     0xD197   ROM_C000
 .vectSeg853_vect                   2     R     0xFFFE     0xFFFF   .vectSeg853
 
 Summary of section sizes per section type:
-READ_ONLY (R):        28EF (dec:    10479)
+READ_ONLY (R):        2A61 (dec:    10849)
 READ_WRITE (R/W):     11D8 (dec:     4568)
 NO_INIT (N/I):         383 (dec:      899)
 
@@ -1677,7 +1677,7 @@ MODULE:                 -- Start12.c.o --
      __SEG_END_SSTACK                          2200       0       0       1               
 MODULE:                 -- EMBEDDED.C.o (ansixbi.lib) --
 - PROCEDURES:
-     printf                                  FE8029      17      23     124   .text       
+     printf                                  FE8029      17      23     138   .text       
 - VARIABLES:
 MODULE:                 -- PRINTF.C.o (ansixbi.lib) --
 - PROCEDURES:
@@ -1695,155 +1695,155 @@ MODULE:                 -- STRING.C.o (ansixbi.lib) --
 - VARIABLES:
 MODULE:                 -- rtshc12.c.o (ansixbi.lib) --
 - PROCEDURES:
-     _BSHL                                     CC09       8       8      10   NON_BANKED  
-     _LSHRU                                    CC11       E      14       2   NON_BANKED  
-     _LCMP                                     CC1F       A      10       6   NON_BANKED  
-     _LNEG                                     CC29       9       9       1   NON_BANKED  
-     _LINC                                     CC32       5       5       4   NON_BANKED  
-     _LDEC                                     CC37       8       8       5   NON_BANKED  
-     _COPY                                     CC3F       8       8       2   NON_BANKED  
-     _CASE_DIRECT_BYTE                         CC47       5       5       4   NON_BANKED  
-     _CASE_CHECKED_BYTE                        CC4C      14      20       1   NON_BANKED  
-     _CASE_SEARCH_8                            CC60      17      23       1   NON_BANKED  
-     _CASE_SEARCH_8_BYTE                       CC77      1A      26       1   NON_BANKED  
+     _BSHL                                     CBEE       8       8      10   NON_BANKED  
+     _LSHRU                                    CBF6       E      14       2   NON_BANKED  
+     _LCMP                                     CC04       A      10       6   NON_BANKED  
+     _LNEG                                     CC0E       9       9       1   NON_BANKED  
+     _LCOM                                     CC17       5       5       1   NON_BANKED  
+     _LINC                                     CC1C       5       5       4   NON_BANKED  
+     _LDEC                                     CC21       8       8       5   NON_BANKED  
+     _COPY                                     CC29       8       8       2   NON_BANKED  
+     _CASE_DIRECT_BYTE                         CC31       5       5       4   NON_BANKED  
+     _CASE_CHECKED_BYTE                        CC36      14      20       1   NON_BANKED  
+     _CASE_SEARCH_8                            CC4A      17      23       1   NON_BANKED  
+     _CASE_SEARCH_8_BYTE                       CC61      1A      26       1   NON_BANKED  
 - VARIABLES:
 MODULE:                 -- init.c.o --
 - PROCEDURES:
      TERMIO_PutChar                          FE84BE       9       9       3   .text       
      main                                    FE84C7      12      18       2   .text       
      showLogo                                FE84D9      1C      28       2   .text       
-     showTaskInfo                            FE84F5      48      72      20   .text       
-     FuncTask1                               FE853D      D0     208       2   .text       
-     FuncTask2                               FE860D      52      82       2   .text       
-     FuncTask3                               FE865F      52      82       2   .text       
-     FuncTask4                               FE86B1      52      82       2   .text       
-     FuncTask5                               FE8703      52      82       2   .text       
-     FuncTask6                               FE8755      6D     109       2   .text       
-     FuncTask7                               FE87C2      6D     109       2   .text       
-     FuncTask8                               FE882F      6D     109       2   .text       
-     FuncTask9                               FE889C      6D     109       2   .text       
-     FuncTask10                              FE8909      52      82       2   .text       
-     FuncIdle                                FE895B       2       2       2   .text       
-     BSP_TimerInit                             CC91      22      34       2   NON_BANKED  
-     clearIntFlag                              CCB3      DC     220       2   NON_BANKED  
-     isrHandler                                CD8F      8C     140     230   NON_BANKED  
-     BSP_UartInit                              CE1B       B      11       2   NON_BANKED  
-     PLL_Init                                  CE26      15      21       2   NON_BANKED  
-     HCS12X_ISR_5                              CE3B       7       7       1   NON_BANKED  
-     HCS12X_ISR_6                              CE42       7       7       1   NON_BANKED  
-     HCS12X_ISR_7                              CE49       7       7       1   NON_BANKED  
-     HCS12X_ISR_8                              CE50       7       7       1   NON_BANKED  
-     HCS12X_ISR_9                              CE57       7       7       1   NON_BANKED  
-     HCS12X_ISR_10                             CE5E       7       7       1   NON_BANKED  
-     HCS12X_ISR_11                             CE65       7       7       1   NON_BANKED  
-     HCS12X_ISR_12                             CE6C       7       7       1   NON_BANKED  
-     HCS12X_ISR_13                             CE73       7       7       1   NON_BANKED  
-     HCS12X_ISR_14                             CE7A       7       7       1   NON_BANKED  
-     HCS12X_ISR_15                             CE81       7       7       1   NON_BANKED  
-     HCS12X_ISR_16                             CE88       7       7       1   NON_BANKED  
-     HCS12X_ISR_17                             CE8F       7       7       1   NON_BANKED  
-     HCS12X_ISR_18                             CE96       7       7       1   NON_BANKED  
-     HCS12X_ISR_19                             CE9D       7       7       1   NON_BANKED  
-     HCS12X_ISR_20                             CEA4       7       7       1   NON_BANKED  
-     HCS12X_ISR_21                             CEAB       7       7       1   NON_BANKED  
-     HCS12X_ISR_22                             CEB2       7       7       1   NON_BANKED  
-     HCS12X_ISR_23                             CEB9       7       7       1   NON_BANKED  
-     HCS12X_ISR_24                             CEC0       7       7       1   NON_BANKED  
-     HCS12X_ISR_25                             CEC7       7       7       1   NON_BANKED  
-     HCS12X_ISR_26                             CECE       7       7       1   NON_BANKED  
-     HCS12X_ISR_27                             CED5       7       7       1   NON_BANKED  
-     HCS12X_ISR_28                             CEDC       7       7       1   NON_BANKED  
-     HCS12X_ISR_29                             CEE3       7       7       1   NON_BANKED  
-     HCS12X_ISR_30                             CEEA       7       7       1   NON_BANKED  
-     HCS12X_ISR_31                             CEF1       7       7       1   NON_BANKED  
-     HCS12X_ISR_32                             CEF8       7       7       1   NON_BANKED  
-     HCS12X_ISR_33                             CEFF       7       7       1   NON_BANKED  
-     HCS12X_ISR_34                             CF06       7       7       1   NON_BANKED  
-     HCS12X_ISR_35                             CF0D       7       7       1   NON_BANKED  
-     HCS12X_ISR_36                             CF14       7       7       1   NON_BANKED  
-     HCS12X_ISR_37                             CF1B       7       7       1   NON_BANKED  
-     HCS12X_ISR_38                             CF22       7       7       1   NON_BANKED  
-     HCS12X_ISR_39                             CF29       7       7       1   NON_BANKED  
-     HCS12X_ISR_40                             CF30       7       7       1   NON_BANKED  
-     HCS12X_ISR_41                             CF37       7       7       1   NON_BANKED  
-     HCS12X_ISR_42                             CF3E       7       7       1   NON_BANKED  
-     HCS12X_ISR_43                             CF45       7       7       1   NON_BANKED  
-     HCS12X_ISR_44                             CF4C       7       7       1   NON_BANKED  
-     HCS12X_ISR_45                             CF53       7       7       1   NON_BANKED  
-     HCS12X_ISR_46                             CF5A       7       7       1   NON_BANKED  
-     HCS12X_ISR_47                             CF61       7       7       1   NON_BANKED  
-     HCS12X_ISR_48                             CF68       7       7       1   NON_BANKED  
-     HCS12X_ISR_49                             CF6F       7       7       1   NON_BANKED  
-     HCS12X_ISR_50                             CF76       7       7       1   NON_BANKED  
-     HCS12X_ISR_51                             CF7D       7       7       1   NON_BANKED  
-     HCS12X_ISR_52                             CF84       7       7       1   NON_BANKED  
-     HCS12X_ISR_53                             CF8B       7       7       1   NON_BANKED  
-     HCS12X_ISR_54                             CF92       7       7       1   NON_BANKED  
-     HCS12X_ISR_55                             CF99       7       7       1   NON_BANKED  
-     HCS12X_ISR_56                             CFA0       7       7       1   NON_BANKED  
-     HCS12X_ISR_57                             CFA7       7       7       1   NON_BANKED  
-     HCS12X_ISR_58                             CFAE       7       7       1   NON_BANKED  
-     HCS12X_ISR_59                             CFB5       7       7       1   NON_BANKED  
-     HCS12X_ISR_60                             CFBC       7       7       1   NON_BANKED  
-     HCS12X_ISR_61                             CFC3       7       7       1   NON_BANKED  
-     HCS12X_ISR_62                             CFCA       7       7       1   NON_BANKED  
-     HCS12X_ISR_63                             CFD1       7       7       1   NON_BANKED  
-     HCS12X_ISR_64                             CFD8       7       7       1   NON_BANKED  
-     HCS12X_ISR_65                             CFDF       7       7       1   NON_BANKED  
-     HCS12X_ISR_66                             CFE6       7       7       1   NON_BANKED  
-     HCS12X_ISR_67                             CFED       7       7       1   NON_BANKED  
-     HCS12X_ISR_68                             CFF4       7       7       1   NON_BANKED  
-     HCS12X_ISR_69                             CFFB       7       7       1   NON_BANKED  
-     HCS12X_ISR_70                             D002       7       7       1   NON_BANKED  
-     HCS12X_ISR_71                             D009       7       7       1   NON_BANKED  
-     HCS12X_ISR_72                             D010       7       7       1   NON_BANKED  
-     HCS12X_ISR_73                             D017       7       7       1   NON_BANKED  
-     HCS12X_ISR_74                             D01E       7       7       1   NON_BANKED  
-     HCS12X_ISR_75                             D025       7       7       1   NON_BANKED  
-     HCS12X_ISR_76                             D02C       7       7       1   NON_BANKED  
-     HCS12X_ISR_77                             D033       7       7       1   NON_BANKED  
-     HCS12X_ISR_78                             D03A       7       7       1   NON_BANKED  
-     HCS12X_ISR_79                             D041       7       7       1   NON_BANKED  
-     HCS12X_ISR_80                             D048       7       7       1   NON_BANKED  
-     HCS12X_ISR_81                             D04F       7       7       1   NON_BANKED  
-     HCS12X_ISR_82                             D056       7       7       1   NON_BANKED  
-     HCS12X_ISR_83                             D05D       7       7       1   NON_BANKED  
-     HCS12X_ISR_84                             D064       7       7       1   NON_BANKED  
-     HCS12X_ISR_85                             D06B       7       7       1   NON_BANKED  
-     HCS12X_ISR_86                             D072       7       7       1   NON_BANKED  
-     HCS12X_ISR_87                             D079       7       7       1   NON_BANKED  
-     HCS12X_ISR_88                             D080       7       7       1   NON_BANKED  
-     HCS12X_ISR_89                             D087       7       7       1   NON_BANKED  
-     HCS12X_ISR_90                             D08E       7       7       1   NON_BANKED  
-     HCS12X_ISR_91                             D095       7       7       1   NON_BANKED  
-     HCS12X_ISR_92                             D09C       7       7       1   NON_BANKED  
-     HCS12X_ISR_93                             D0A3       7       7       1   NON_BANKED  
-     HCS12X_ISR_94                             D0AA       7       7       1   NON_BANKED  
-     HCS12X_ISR_95                             D0B1       7       7       1   NON_BANKED  
-     HCS12X_ISR_96                             D0B8       7       7       1   NON_BANKED  
-     HCS12X_ISR_97                             D0BF       7       7       1   NON_BANKED  
-     HCS12X_ISR_98                             D0C6       7       7       1   NON_BANKED  
-     HCS12X_ISR_99                             D0CD       7       7       1   NON_BANKED  
-     HCS12X_ISR_100                            D0D4       7       7       1   NON_BANKED  
-     HCS12X_ISR_101                            D0DB       7       7       1   NON_BANKED  
-     HCS12X_ISR_102                            D0E2       7       7       1   NON_BANKED  
-     HCS12X_ISR_103                            D0E9       7       7       1   NON_BANKED  
-     HCS12X_ISR_104                            D0F0       7       7       1   NON_BANKED  
-     HCS12X_ISR_105                            D0F7       7       7       1   NON_BANKED  
-     HCS12X_ISR_106                            D0FE       7       7       1   NON_BANKED  
-     HCS12X_ISR_107                            D105       7       7       1   NON_BANKED  
-     HCS12X_ISR_108                            D10C       7       7       1   NON_BANKED  
-     HCS12X_ISR_109                            D113       7       7       1   NON_BANKED  
-     HCS12X_ISR_110                            D11A       7       7       1   NON_BANKED  
-     HCS12X_ISR_111                            D121       7       7       1   NON_BANKED  
-     HCS12X_ISR_112                            D128       7       7       1   NON_BANKED  
-     HCS12X_ISR_113                            D12F       7       7       1   NON_BANKED  
-     HCS12X_ISR_114                            D136       7       7       1   NON_BANKED  
-     HCS12X_ISR_115                            D13D       7       7       1   NON_BANKED  
-     HCS12X_ISR_116                            D144       7       7       1   NON_BANKED  
-     HCS12X_ISR_117                            D14B       7       7       1   NON_BANKED  
-     HCS12X_ISR_118                            D152       7       7       1   NON_BANKED  
-     HCS12X_ISR_119                            D159       7       7       1   NON_BANKED  
+     showTaskInfo                            FE84F5      48      72      18   .text       
+     FuncTask1                               FE853D      BD     189       2   .text       
+     FuncTask2                               FE85FA      6D     109       2   .text       
+     FuncTask3                               FE8667      6D     109       2   .text       
+     FuncTask4                               FE86D4      65     101       2   .text       
+     FuncTask5                               FE8739      6D     109       2   .text       
+     FuncTask6                               FE87A6      A5     165       2   .text       
+     FuncTask7                               FE884B      A5     165       2   .text       
+     FuncTask8                               FE88F0      A5     165       2   .text       
+     FuncTask9                               FE8995      A5     165       2   .text       
+     FuncTask10                              FE8A3A      6D     109       2   .text       
+     BSP_TimerInit                             CC7B      22      34       2   NON_BANKED  
+     clearIntFlag                              CC9D      DC     220       2   NON_BANKED  
+     isrHandler                                CD79      8C     140     230   NON_BANKED  
+     BSP_UartInit                              CE05       B      11       2   NON_BANKED  
+     PLL_Init                                  CE10      15      21       2   NON_BANKED  
+     HCS12X_ISR_5                              CE25       7       7       1   NON_BANKED  
+     HCS12X_ISR_6                              CE2C       7       7       1   NON_BANKED  
+     HCS12X_ISR_7                              CE33       7       7       1   NON_BANKED  
+     HCS12X_ISR_8                              CE3A       7       7       1   NON_BANKED  
+     HCS12X_ISR_9                              CE41       7       7       1   NON_BANKED  
+     HCS12X_ISR_10                             CE48       7       7       1   NON_BANKED  
+     HCS12X_ISR_11                             CE4F       7       7       1   NON_BANKED  
+     HCS12X_ISR_12                             CE56       7       7       1   NON_BANKED  
+     HCS12X_ISR_13                             CE5D       7       7       1   NON_BANKED  
+     HCS12X_ISR_14                             CE64       7       7       1   NON_BANKED  
+     HCS12X_ISR_15                             CE6B       7       7       1   NON_BANKED  
+     HCS12X_ISR_16                             CE72       7       7       1   NON_BANKED  
+     HCS12X_ISR_17                             CE79       7       7       1   NON_BANKED  
+     HCS12X_ISR_18                             CE80       7       7       1   NON_BANKED  
+     HCS12X_ISR_19                             CE87       7       7       1   NON_BANKED  
+     HCS12X_ISR_20                             CE8E       7       7       1   NON_BANKED  
+     HCS12X_ISR_21                             CE95       7       7       1   NON_BANKED  
+     HCS12X_ISR_22                             CE9C       7       7       1   NON_BANKED  
+     HCS12X_ISR_23                             CEA3       7       7       1   NON_BANKED  
+     HCS12X_ISR_24                             CEAA       7       7       1   NON_BANKED  
+     HCS12X_ISR_25                             CEB1       7       7       1   NON_BANKED  
+     HCS12X_ISR_26                             CEB8       7       7       1   NON_BANKED  
+     HCS12X_ISR_27                             CEBF       7       7       1   NON_BANKED  
+     HCS12X_ISR_28                             CEC6       7       7       1   NON_BANKED  
+     HCS12X_ISR_29                             CECD       7       7       1   NON_BANKED  
+     HCS12X_ISR_30                             CED4       7       7       1   NON_BANKED  
+     HCS12X_ISR_31                             CEDB       7       7       1   NON_BANKED  
+     HCS12X_ISR_32                             CEE2       7       7       1   NON_BANKED  
+     HCS12X_ISR_33                             CEE9       7       7       1   NON_BANKED  
+     HCS12X_ISR_34                             CEF0       7       7       1   NON_BANKED  
+     HCS12X_ISR_35                             CEF7       7       7       1   NON_BANKED  
+     HCS12X_ISR_36                             CEFE       7       7       1   NON_BANKED  
+     HCS12X_ISR_37                             CF05       7       7       1   NON_BANKED  
+     HCS12X_ISR_38                             CF0C       7       7       1   NON_BANKED  
+     HCS12X_ISR_39                             CF13       7       7       1   NON_BANKED  
+     HCS12X_ISR_40                             CF1A       7       7       1   NON_BANKED  
+     HCS12X_ISR_41                             CF21       7       7       1   NON_BANKED  
+     HCS12X_ISR_42                             CF28       7       7       1   NON_BANKED  
+     HCS12X_ISR_43                             CF2F       7       7       1   NON_BANKED  
+     HCS12X_ISR_44                             CF36       7       7       1   NON_BANKED  
+     HCS12X_ISR_45                             CF3D       7       7       1   NON_BANKED  
+     HCS12X_ISR_46                             CF44       7       7       1   NON_BANKED  
+     HCS12X_ISR_47                             CF4B       7       7       1   NON_BANKED  
+     HCS12X_ISR_48                             CF52       7       7       1   NON_BANKED  
+     HCS12X_ISR_49                             CF59       7       7       1   NON_BANKED  
+     HCS12X_ISR_50                             CF60       7       7       1   NON_BANKED  
+     HCS12X_ISR_51                             CF67       7       7       1   NON_BANKED  
+     HCS12X_ISR_52                             CF6E       7       7       1   NON_BANKED  
+     HCS12X_ISR_53                             CF75       7       7       1   NON_BANKED  
+     HCS12X_ISR_54                             CF7C       7       7       1   NON_BANKED  
+     HCS12X_ISR_55                             CF83       7       7       1   NON_BANKED  
+     HCS12X_ISR_56                             CF8A       7       7       1   NON_BANKED  
+     HCS12X_ISR_57                             CF91       7       7       1   NON_BANKED  
+     HCS12X_ISR_58                             CF98       7       7       1   NON_BANKED  
+     HCS12X_ISR_59                             CF9F       7       7       1   NON_BANKED  
+     HCS12X_ISR_60                             CFA6       7       7       1   NON_BANKED  
+     HCS12X_ISR_61                             CFAD       7       7       1   NON_BANKED  
+     HCS12X_ISR_62                             CFB4       7       7       1   NON_BANKED  
+     HCS12X_ISR_63                             CFBB       7       7       1   NON_BANKED  
+     HCS12X_ISR_64                             CFC2       7       7       1   NON_BANKED  
+     HCS12X_ISR_65                             CFC9       7       7       1   NON_BANKED  
+     HCS12X_ISR_66                             CFD0       7       7       1   NON_BANKED  
+     HCS12X_ISR_67                             CFD7       7       7       1   NON_BANKED  
+     HCS12X_ISR_68                             CFDE       7       7       1   NON_BANKED  
+     HCS12X_ISR_69                             CFE5       7       7       1   NON_BANKED  
+     HCS12X_ISR_70                             CFEC       7       7       1   NON_BANKED  
+     HCS12X_ISR_71                             CFF3       7       7       1   NON_BANKED  
+     HCS12X_ISR_72                             CFFA       7       7       1   NON_BANKED  
+     HCS12X_ISR_73                             D001       7       7       1   NON_BANKED  
+     HCS12X_ISR_74                             D008       7       7       1   NON_BANKED  
+     HCS12X_ISR_75                             D00F       7       7       1   NON_BANKED  
+     HCS12X_ISR_76                             D016       7       7       1   NON_BANKED  
+     HCS12X_ISR_77                             D01D       7       7       1   NON_BANKED  
+     HCS12X_ISR_78                             D024       7       7       1   NON_BANKED  
+     HCS12X_ISR_79                             D02B       7       7       1   NON_BANKED  
+     HCS12X_ISR_80                             D032       7       7       1   NON_BANKED  
+     HCS12X_ISR_81                             D039       7       7       1   NON_BANKED  
+     HCS12X_ISR_82                             D040       7       7       1   NON_BANKED  
+     HCS12X_ISR_83                             D047       7       7       1   NON_BANKED  
+     HCS12X_ISR_84                             D04E       7       7       1   NON_BANKED  
+     HCS12X_ISR_85                             D055       7       7       1   NON_BANKED  
+     HCS12X_ISR_86                             D05C       7       7       1   NON_BANKED  
+     HCS12X_ISR_87                             D063       7       7       1   NON_BANKED  
+     HCS12X_ISR_88                             D06A       7       7       1   NON_BANKED  
+     HCS12X_ISR_89                             D071       7       7       1   NON_BANKED  
+     HCS12X_ISR_90                             D078       7       7       1   NON_BANKED  
+     HCS12X_ISR_91                             D07F       7       7       1   NON_BANKED  
+     HCS12X_ISR_92                             D086       7       7       1   NON_BANKED  
+     HCS12X_ISR_93                             D08D       7       7       1   NON_BANKED  
+     HCS12X_ISR_94                             D094       7       7       1   NON_BANKED  
+     HCS12X_ISR_95                             D09B       7       7       1   NON_BANKED  
+     HCS12X_ISR_96                             D0A2       7       7       1   NON_BANKED  
+     HCS12X_ISR_97                             D0A9       7       7       1   NON_BANKED  
+     HCS12X_ISR_98                             D0B0       7       7       1   NON_BANKED  
+     HCS12X_ISR_99                             D0B7       7       7       1   NON_BANKED  
+     HCS12X_ISR_100                            D0BE       7       7       1   NON_BANKED  
+     HCS12X_ISR_101                            D0C5       7       7       1   NON_BANKED  
+     HCS12X_ISR_102                            D0CC       7       7       1   NON_BANKED  
+     HCS12X_ISR_103                            D0D3       7       7       1   NON_BANKED  
+     HCS12X_ISR_104                            D0DA       7       7       1   NON_BANKED  
+     HCS12X_ISR_105                            D0E1       7       7       1   NON_BANKED  
+     HCS12X_ISR_106                            D0E8       7       7       1   NON_BANKED  
+     HCS12X_ISR_107                            D0EF       7       7       1   NON_BANKED  
+     HCS12X_ISR_108                            D0F6       7       7       1   NON_BANKED  
+     HCS12X_ISR_109                            D0FD       7       7       1   NON_BANKED  
+     HCS12X_ISR_110                            D104       7       7       1   NON_BANKED  
+     HCS12X_ISR_111                            D10B       7       7       1   NON_BANKED  
+     HCS12X_ISR_112                            D112       7       7       1   NON_BANKED  
+     HCS12X_ISR_113                            D119       7       7       1   NON_BANKED  
+     HCS12X_ISR_114                            D120       7       7       1   NON_BANKED  
+     HCS12X_ISR_115                            D127       7       7       1   NON_BANKED  
+     HCS12X_ISR_116                            D12E       7       7       1   NON_BANKED  
+     HCS12X_ISR_117                            D135       7       7       1   NON_BANKED  
+     HCS12X_ISR_118                            D13C       7       7       1   NON_BANKED  
+     HCS12X_ISR_119                            D143       7       7       1   NON_BANKED  
 - VARIABLES:
      STRING......................1             C145      3E      62       1   .rodata1    
      STRING.................ESEC.2             C183      3E      62       1   .rodata1    
@@ -1853,63 +1853,70 @@ MODULE:                 -- init.c.o --
      STRING.taskState..waiting..6              C222      14      20       1   .rodata1    
      STRING.taskState..ready..7                C236      12      18       1   .rodata1    
      STRING.taskState..suspended.8             C248      16      22       1   .rodata1    
-     STRING......................9             C25E      3C      60       1   .rodata1    
-     STRING.task.1.sets.alarms.f.10            C29A      27      39       1   .rodata1    
-     STRING.task.1.activates.Tas.11            C2C1      1C      28       1   .rodata1    
-     STRING......................12            C2DD      3C      60       1   .rodata1    
-     STRING......................13            C319      3C      60       1   .rodata1    
-     STRING.task2.requests.Resou.14            C355      1C      28       1   .rodata1    
-     STRING.Task.2.activated.by..15            C371      2B      43       1   .rodata1    
-     STRING.task2.releases.Resou.16            C39C      1C      28       1   .rodata1    
-     STRING......................17            C3B8      3C      60       1   .rodata1    
-     STRING......................18            C3F4      3C      60       1   .rodata1    
-     STRING.task3.requests.Resou.19            C430      1C      28       1   .rodata1    
-     STRING.Task.3.activated.by..20            C44C      2B      43       1   .rodata1    
-     STRING.task3.releases.Resou.21            C477      1C      28       1   .rodata1    
-     STRING......................22            C493      3C      60       1   .rodata1    
-     STRING......................23            C4CF      3C      60       1   .rodata1    
-     STRING.task4.requests.Resou.24            C50B      1C      28       1   .rodata1    
-     STRING.Task.4.activated.by..25            C527      2B      43       1   .rodata1    
-     STRING.task4.releases.Resou.26            C552      1C      28       1   .rodata1    
-     STRING......................27            C56E      3C      60       1   .rodata1    
-     STRING......................28            C5AA      3C      60       1   .rodata1    
-     STRING.task5.requests.Resou.29            C5E6      1C      28       1   .rodata1    
-     STRING.Task.5.activated.by..30            C602      2B      43       1   .rodata1    
-     STRING.task5.releases.Resou.31            C62D      1C      28       1   .rodata1    
-     STRING......................32            C649      3C      60       1   .rodata1    
-     STRING......................33            C685      3C      60       1   .rodata1    
-     STRING.task6.waiting.for.Ev.34            C6C1      2D      45       1   .rodata1    
-     STRING.task6.event.received.35            C6EE      17      23       1   .rodata1    
-     STRING.task6.requests.Resou.36            C705      1C      28       1   .rodata1    
-     STRING.Task.6.reactivated.b.37            C721      33      51       1   .rodata1    
-     STRING.task6.releases.Resou.38            C754      1C      28       1   .rodata1    
-     STRING......................39            C770      3C      60       1   .rodata1    
-     STRING......................40            C7AC      3C      60       1   .rodata1    
-     STRING.task7.waiting.for.Ev.41            C7E8      2D      45       1   .rodata1    
-     STRING.task7.event.received.42            C815      17      23       1   .rodata1    
-     STRING.task7.requests.Resou.43            C82C      1C      28       1   .rodata1    
-     STRING.Task.7.reactivated.b.44            C848      33      51       1   .rodata1    
-     STRING.task7.releases.Resou.45            C87B      1C      28       1   .rodata1    
-     STRING......................46            C897      3C      60       1   .rodata1    
-     STRING......................47            C8D3      3C      60       1   .rodata1    
-     STRING.task8.waiting.for.Ev.48            C90F      2D      45       1   .rodata1    
-     STRING.task8.event.received.49            C93C      17      23       1   .rodata1    
-     STRING.task8.requests.Resou.50            C953      1C      28       1   .rodata1    
-     STRING.Task.8.reactivated.b.51            C96F      33      51       1   .rodata1    
-     STRING.task8.releases.Resou.52            C9A2      1C      28       1   .rodata1    
-     STRING......................53            C9BE      3C      60       1   .rodata1    
-     STRING......................54            C9FA      3C      60       1   .rodata1    
-     STRING.task9.waiting.for.Ev.55            CA36      2D      45       1   .rodata1    
-     STRING.task9.event.received.56            CA63      17      23       1   .rodata1    
-     STRING.task9.requests.Resou.57            CA7A      1C      28       1   .rodata1    
-     STRING.Task.9.reactivated.b.58            CA96      33      51       1   .rodata1    
-     STRING.task9.releases.Resou.59            CAC9      1C      28       1   .rodata1    
-     STRING......................60            CAE5      3C      60       1   .rodata1    
-     STRING......................61            CB21      3D      61       1   .rodata1    
-     STRING.task10.requests.Reso.62            CB5E      1D      29       1   .rodata1    
-     STRING.Task.10.activated.di.63            CB7B      34      52       1   .rodata1    
-     STRING.task10.releases.Reso.64            CBAF      1D      29       1   .rodata1    
-     STRING......................65            CBCC      3D      61       1   .rodata1    
+     STRING......................10            C25E      3C      60       1   .rodata1    
+     STRING......................11            C29A      3C      60       1   .rodata1    
+     STRING......................12            C2D6      3C      60       1   .rodata1    
+     STRING.task2.get.resource1..13            C312      1F      31       1   .rodata1    
+     STRING.task2.get.resource1..14            C331      18      24       1   .rodata1    
+     STRING.task2.release.resour.15            C349      23      35       1   .rodata1    
+     STRING.task2.release.resour.16            C36C      1C      28       1   .rodata1    
+     STRING......................17            C388      3C      60       1   .rodata1    
+     STRING......................18            C3C4      3C      60       1   .rodata1    
+     STRING.task3.get.resource2..19            C400      1F      31       1   .rodata1    
+     STRING.task3.get.resource2..20            C41F      18      24       1   .rodata1    
+     STRING.task3.release.resour.21            C437      23      35       1   .rodata1    
+     STRING.task3.release.resour.22            C45A      1C      28       1   .rodata1    
+     STRING......................23            C476      3C      60       1   .rodata1    
+     STRING......................24            C4B2      3C      60       1   .rodata1    
+     STRING.task4.get.resource3..25            C4EE      1F      31       1   .rodata1    
+     STRING.task4.get.resource3..26            C50D      18      24       1   .rodata1    
+     STRING.task4.release.resour.27            C525      23      35       1   .rodata1    
+     STRING.task4.release.resour.28            C548      1C      28       1   .rodata1    
+     STRING......................29            C564      3C      60       1   .rodata1    
+     STRING......................30            C5A0      3C      60       1   .rodata1    
+     STRING.task5.get.resource1..31            C5DC      1F      31       1   .rodata1    
+     STRING.task5.get.resource1..32            C5FB      18      24       1   .rodata1    
+     STRING.task5.release.resour.33            C613      23      35       1   .rodata1    
+     STRING.task5.release.resour.34            C636      1C      28       1   .rodata1    
+     STRING......................35            C652      3C      60       1   .rodata1    
+     STRING.task6.wait.event..0x.36            C68E      18      24       1   .rodata1    
+     STRING.task6.get.event...d..37            C6A6      15      21       1   .rodata1    
+     STRING......................38            C6BB      3C      60       1   .rodata1    
+     STRING.task6.get.resource2..39            C6F7      1F      31       1   .rodata1    
+     STRING.task6.get.resource2..40            C716      18      24       1   .rodata1    
+     STRING.task6.release.resour.41            C72E      23      35       1   .rodata1    
+     STRING.task6.release.resour.42            C751      1C      28       1   .rodata1    
+     STRING......................43            C76D      3C      60       1   .rodata1    
+     STRING.task7.wait.event..0x.44            C7A9      18      24       1   .rodata1    
+     STRING.task7.get.event...d..45            C7C1      15      21       1   .rodata1    
+     STRING......................46            C7D6      3C      60       1   .rodata1    
+     STRING.task7.get.resource3..47            C812      1F      31       1   .rodata1    
+     STRING.task7.get.resource3..48            C831      18      24       1   .rodata1    
+     STRING.task7.release.resour.49            C849      23      35       1   .rodata1    
+     STRING.task7.release.resour.50            C86C      1C      28       1   .rodata1    
+     STRING......................51            C888      3C      60       1   .rodata1    
+     STRING.task8.wait.event..0x.52            C8C4      18      24       1   .rodata1    
+     STRING.task8.get.event...d..53            C8DC      15      21       1   .rodata1    
+     STRING......................54            C8F1      3C      60       1   .rodata1    
+     STRING.task8.get.resource1..55            C92D      1F      31       1   .rodata1    
+     STRING.task8.get.resource1..56            C94C      18      24       1   .rodata1    
+     STRING.task8.release.resour.57            C964      23      35       1   .rodata1    
+     STRING.task8.release.resour.58            C987      1C      28       1   .rodata1    
+     STRING......................59            C9A3      3C      60       1   .rodata1    
+     STRING.task9.wait.event..0x.60            C9DF      18      24       1   .rodata1    
+     STRING.task9.get.event...d..61            C9F7      15      21       1   .rodata1    
+     STRING......................62            CA0C      3C      60       1   .rodata1    
+     STRING.task9.get.resource2..63            CA48      1F      31       1   .rodata1    
+     STRING.task9.get.resource2..64            CA67      18      24       1   .rodata1    
+     STRING.task9.release.resour.65            CA7F      23      35       1   .rodata1    
+     STRING.task9.release.resour.66            CAA2      1C      28       1   .rodata1    
+     STRING......................67            CABE      3C      60       1   .rodata1    
+     STRING......................68            CAFA      3D      61       1   .rodata1    
+     STRING.task10.get.resource3.69            CB37      20      32       1   .rodata1    
+     STRING.task10.get.resource3.70            CB57      19      25       1   .rodata1    
+     STRING.task10.release.resou.71            CB70      24      36       1   .rodata1    
+     STRING.task10.release.resou.72            CB94      1D      29       1   .rodata1    
+     STRING......................73            CBB1      3D      61       1   .rodata1    
      _Vector_5                                 FFF4       2       2       0   .abs_section_fff4
      _Vector_6                                 FFF2       2       2       0   .abs_section_fff2
      _Vector_7                                 FFF0       2       2       0   .abs_section_fff0
@@ -2028,82 +2035,83 @@ MODULE:                 -- init.c.o --
      temp_sp                                   29DA       2       2       2   .common     
 MODULE:                 -- cfg.c.o --
 - PROCEDURES:
-     Ir_RealTimInt                             D160       6       6       2   NON_BANKED  
+     Ir_RealTimInt                             D14A       6       6       2   NON_BANKED  
 - VARIABLES:
      osekConfig_TaskTable                      C0C1      84     132       1   .rodata     
      osekConfig_InterruptTypeTable             2200      80     128       1   .data       
      osekConfig_InterruptEntryTable            2280     180     384       2   .data       
      osekConfig_CounterTable                   2400       C      12       1   .data       
-     osekConfig_ResourcePriorityTable          240C       6       6       1   .data       
-     osekConfig_AlarmTable                     2412      48      72       5   .data       
+     osekConfig_AlarmTable                     240C      48      72       5   .data       
+     osekConfig_ResourcePriorityTable          2454       6       6       1   .data       
      taskStack                                 29DC     528    1320      20   .common     
 MODULE:                 -- osekAlarm.c.o --
 - PROCEDURES:
-     SetAlarm                                FE895D      72     114       2   .text       
-     SetRelAlarm                             FE89CF      DF     223      18   .text       
-     NotifyAlarm                             FE8AAE      32      50       2   .text       
-     osekAlarm_Check1                        FE8AE0      35      53       2   .text       
-     osekAlarm_Check2                        FE8B15      79     121       4   .text       
-     osekAlarm_Initialize                    FE8B8E      56      86       2   .text       
+     SetAlarm                                FE8AA7      72     114       2   .text       
+     SetRelAlarm                             FE8B19      DF     223      18   .text       
+     NotifyAlarm                             FE8BF8      32      50       2   .text       
+     osekAlarm_Check1                        FE8C2A      35      53       2   .text       
+     osekAlarm_Check2                        FE8C5F      79     121       4   .text       
+     osekAlarm_Initialize                    FE8CD8      56      86       2   .text       
 - VARIABLES:
      osekAlarm_AlarmTable                      2F04      B8     184      15   .common     
 MODULE:                 -- osekCounter.c.o --
 - PROCEDURES:
-     CounterTrigger                          FE8BE4      4F      79       2   .text       
-     osekCounter_Initialize                  FE8C33      2A      42       2   .text       
+     CounterTrigger                          FE8D2E      4F      79       2   .text       
+     osekCounter_Initialize                  FE8D7D      2A      42       2   .text       
 - VARIABLES:
      osekCounter_CounterTable                  2FBC      12      18      20   .common     
 MODULE:                 -- osekEvent.c.o --
 - PROCEDURES:
-     osekEvent_SetEvent                      FE8C5D      57      87       2   .text       
-     WaitEvent                               FE8CB4      73     115       8   .text       
+     osekEvent_SetEvent                      FE8DA7      57      87       2   .text       
+     ClearEvent                              FE8DFE      4A      74       8   .text       
+     WaitEvent                               FE8E48      73     115       8   .text       
+     GetEvent                                FE8EBB      3F      63       8   .text       
 - VARIABLES:
 MODULE:                 -- osekExecution.c.o --
 - PROCEDURES:
-     StartOS                                 FE8D27      2B      43       2   .text       
+     StartOS                                 FE8EFA      2B      43       2   .text       
 - VARIABLES:
      osekExecution_CurrentAppMode              2FCE       1       1       1   .common     
 MODULE:                 -- osekInterrupt.c.o --
 - PROCEDURES:
-     osekInterrupt_Initialize                FE8D52       A      10       2   .text       
+     osekInterrupt_Initialize                FE8F25       A      10       2   .text       
 - VARIABLES:
      isr2Stack                                 2561     400    1024       1   .bss        
-     osekInterrupt_NestedLevl                  2FCF       4       4      25   .common     
+     osekInterrupt_NestedLevl                  2FCF       4       4      27   .common     
      osekInterrupt_IsrStackTop                 2FD3       2       2       2   .common     
 MODULE:                 -- osekMessage.c.o --
 - PROCEDURES:
-     InitCOM                                 FE8D5C       2       2       2   .text       
+     InitCOM                                 FE8F2F       2       2       2   .text       
 - VARIABLES:
 MODULE:                 -- osekResource.c.o --
 - PROCEDURES:
-     GetResource                             FE8D5E      9E     158      18   .text       
-     ReleaseResource                         FE8DFC      DB     219      19   .text       
-     osekResource_Initialize                 FE8ED7      34      52       2   .text       
+     GetResource                             FE8F31      9E     158      18   .text       
+     ReleaseResource                         FE8FCF      DB     219      19   .text       
+     osekResource_Initialize                 FE90AA      34      52       2   .text       
 - VARIABLES:
      osekResource_ResourceTable                2FD5      1B      27      22   .common     
 MODULE:                 -- osekTarget.c.o --
 - PROCEDURES:
-     osekTarget_SaveContext                    D166      1B      27       2   NON_BANKED  
-     osekTarget_RestoreContext                 D181      17      23       4   NON_BANKED  
+     osekTarget_SaveContext                    D150      1B      27       2   NON_BANKED  
+     osekTarget_RestoreContext                 D16B      17      23       4   NON_BANKED  
 - VARIABLES:
      osekTarget_SavedBTSP                      2FF0       2       2       4   .common     
 MODULE:                 -- osekTask.c.o --
 - PROCEDURES:
-     AddTask2ReadyTableAtHead                FE8F0B      1E      30       2   .text       
-     AddaReadyBlock                          FE8F29      B6     182       7   .text       
-     ReleaseReadyBlock                       FE8FDF       B      11       4   .text       
-     MoveTaskFromReadyTable                  FE8FEA      13      19       6   .text       
-     osekTask_ChangeRunningTaskPriority      FE8FFD      7E     126       4   .text       
-     osekTask_ActiveTask                     FE907B      50      80       4   .text       
-     osekTask_WakeTask                       FE90CB      3C      60       2   .text       
-     osekTask_WaitTask                       FE9107      5B      91       2   .text       
-     ActivateTask                            FE9162      4B      75       2   .text       
-     TerminateTask                           FE91AD      91     145      20   .text       
-     osekTask_Dispatch                       FE923E      AF     175      14   .text       
-     osekTask_TerminateDispatch              FE92ED      6B     107       2   .text       
-     GetTaskState                            FE9358      3D      61       2   .text       
-     GetTaskID                               FE9395      27      39      20   .text       
-     osekTask_Initialize                     FE93BC      CB     203       3   .text       
+     AddTask2ReadyTableAtHead                FE90DE      1E      30       2   .text       
+     AddaReadyBlock                          FE90FC      B6     182       7   .text       
+     ReleaseReadyBlock                       FE91B2       B      11       4   .text       
+     MoveTaskFromReadyTable                  FE91BD      13      19       6   .text       
+     osekTask_ChangeRunningTaskPriority      FE91D0      7E     126       4   .text       
+     osekTask_ActiveTask                     FE924E      50      80       2   .text       
+     osekTask_WakeTask                       FE929E      3C      60       2   .text       
+     osekTask_WaitTask                       FE92DA      5B      91       2   .text       
+     TerminateTask                           FE9335      91     145      20   .text       
+     osekTask_Dispatch                       FE93C6      AF     175      12   .text       
+     osekTask_TerminateDispatch              FE9475      6B     107       2   .text       
+     GetTaskState                            FE94E0      3D      61       2   .text       
+     GetTaskID                               FE951D      27      39      20   .text       
+     osekTask_Initialize                     FE9544      CB     203       3   .text       
 - VARIABLES:
      osekTask_PriorityIndexTable               245A     100     256       2   .data       
      osekTask_ContextTable                     2961      79     121       1   .bss        
@@ -2111,8 +2119,8 @@ MODULE:                 -- osekTask.c.o --
      osekTask_PriorityBitMap                   3072       4       4      11   .common     
      osekTask_PriorityBitMapMajor              3076       1       1      13   .common     
      osekTask_FreeReadyBlock                   3077       2       2       6   .common     
-     osekTask_TaskTable                        3079     129     297       5   .common     
-     osekTask_RunningTask                      31A2       2       2      30   .common     
+     osekTask_TaskTable                        3079     129     297       8   .common     
+     osekTask_RunningTask                      31A2       2       2      32   .common     
      osekTask_SchedulerLockLevel               31A4       4       4      12   .common     
      osekTask_IsrTriggeredTaskSwitchNecessary       31A8       4       4       8   .common     
      osekTask_ReadyBlock                       31AC      2C      44       3   .common     
@@ -2126,18 +2134,18 @@ MODULE STATISTIC
   EMBEDDED.C.o (ansixbi.lib)                   0     23      0
   PRINTF.C.o (ansixbi.lib)                     7   1127    116
   STRING.C.o (ansixbi.lib)                     0     23      0
-  rtshc12.c.o (ansixbi.lib)                    0    136      0
-  init.c.o                                     2   2414   2986
+  rtshc12.c.o (ansixbi.lib)                    0    141      0
+  init.c.o                                     2   2744   2959
   cfg.c.o                                   1922      6    132
   osekAlarm.c.o                              184    647      0
   osekCounter.c.o                             18    121      0
-  osekEvent.c.o                                0    202      0
+  osekEvent.c.o                                0    339      0
   osekExecution.c.o                            1     43      0
   osekInterrupt.c.o                         1030     10      0
   osekMessage.c.o                              0      2      0
   osekResource.c.o                            27    429      0
   osekTarget.c.o                               2     50      0
-  osekTask.c.o                               863   1404      0
+  osekTask.c.o                               863   1329      0
   other                                      512     68    488
 
 *********************************************************************************************
@@ -2146,19 +2154,19 @@ SECTION USE IN OBJECT-ALLOCATION SECTION
 SECTION: ".text"
   Init printf vprintf _out set_printf memset TERMIO_PutChar main showLogo 
   showTaskInfo FuncTask1 FuncTask2 FuncTask3 FuncTask4 FuncTask5 FuncTask6 
-  FuncTask7 FuncTask8 FuncTask9 FuncTask10 FuncIdle SetAlarm SetRelAlarm 
-  NotifyAlarm osekAlarm_Check1 osekAlarm_Check2 osekAlarm_Initialize 
-  CounterTrigger osekCounter_Initialize osekEvent_SetEvent WaitEvent StartOS 
-  osekInterrupt_Initialize InitCOM GetResource ReleaseResource 
+  FuncTask7 FuncTask8 FuncTask9 FuncTask10 SetAlarm SetRelAlarm NotifyAlarm 
+  osekAlarm_Check1 osekAlarm_Check2 osekAlarm_Initialize CounterTrigger 
+  osekCounter_Initialize osekEvent_SetEvent ClearEvent WaitEvent GetEvent 
+  StartOS osekInterrupt_Initialize InitCOM GetResource ReleaseResource 
   osekResource_Initialize AddTask2ReadyTableAtHead AddaReadyBlock 
   ReleaseReadyBlock MoveTaskFromReadyTable osekTask_ChangeRunningTaskPriority 
-  osekTask_ActiveTask osekTask_WakeTask osekTask_WaitTask ActivateTask 
-  TerminateTask osekTask_Dispatch osekTask_TerminateDispatch GetTaskState 
-  GetTaskID osekTask_Initialize 
+  osekTask_ActiveTask osekTask_WakeTask osekTask_WaitTask TerminateTask 
+  osekTask_Dispatch osekTask_TerminateDispatch GetTaskState GetTaskID 
+  osekTask_Initialize 
 SECTION: ".data"
   osekConfig_InterruptTypeTable osekConfig_InterruptEntryTable 
-  osekConfig_CounterTable osekConfig_ResourcePriorityTable 
-  osekConfig_AlarmTable osekTask_PriorityIndexTable 
+  osekConfig_CounterTable osekConfig_AlarmTable 
+  osekConfig_ResourcePriorityTable osekTask_PriorityIndexTable 
 SECTION: ".bss"
   pbuf isr2Stack osekTask_ContextTable 
 SECTION: ".init"
@@ -2170,37 +2178,40 @@ SECTION: ".rodata1"
   STRING......................3 STRING.task.id...u...4 
   STRING.taskState..running..5 STRING.taskState..waiting..6 
   STRING.taskState..ready..7 STRING.taskState..suspended.8 
-  STRING......................9 STRING.task.1.sets.alarms.f.10 
-  STRING.task.1.activates.Tas.11 STRING......................12 
-  STRING......................13 STRING.task2.requests.Resou.14 
-  STRING.Task.2.activated.by..15 STRING.task2.releases.Resou.16 
-  STRING......................17 STRING......................18 
-  STRING.task3.requests.Resou.19 STRING.Task.3.activated.by..20 
-  STRING.task3.releases.Resou.21 STRING......................22 
-  STRING......................23 STRING.task4.requests.Resou.24 
-  STRING.Task.4.activated.by..25 STRING.task4.releases.Resou.26 
-  STRING......................27 STRING......................28 
-  STRING.task5.requests.Resou.29 STRING.Task.5.activated.by..30 
-  STRING.task5.releases.Resou.31 STRING......................32 
-  STRING......................33 STRING.task6.waiting.for.Ev.34 
-  STRING.task6.event.received.35 STRING.task6.requests.Resou.36 
-  STRING.Task.6.reactivated.b.37 STRING.task6.releases.Resou.38 
-  STRING......................39 STRING......................40 
-  STRING.task7.waiting.for.Ev.41 STRING.task7.event.received.42 
-  STRING.task7.requests.Resou.43 STRING.Task.7.reactivated.b.44 
-  STRING.task7.releases.Resou.45 STRING......................46 
-  STRING......................47 STRING.task8.waiting.for.Ev.48 
-  STRING.task8.event.received.49 STRING.task8.requests.Resou.50 
-  STRING.Task.8.reactivated.b.51 STRING.task8.releases.Resou.52 
-  STRING......................53 STRING......................54 
-  STRING.task9.waiting.for.Ev.55 STRING.task9.event.received.56 
-  STRING.task9.requests.Resou.57 STRING.Task.9.reactivated.b.58 
-  STRING.task9.releases.Resou.59 STRING......................60 
-  STRING......................61 STRING.task10.requests.Reso.62 
-  STRING.Task.10.activated.di.63 STRING.task10.releases.Reso.64 
-  STRING......................65 
+  STRING......................10 STRING......................11 
+  STRING......................12 STRING.task2.get.resource1..13 
+  STRING.task2.get.resource1..14 STRING.task2.release.resour.15 
+  STRING.task2.release.resour.16 STRING......................17 
+  STRING......................18 STRING.task3.get.resource2..19 
+  STRING.task3.get.resource2..20 STRING.task3.release.resour.21 
+  STRING.task3.release.resour.22 STRING......................23 
+  STRING......................24 STRING.task4.get.resource3..25 
+  STRING.task4.get.resource3..26 STRING.task4.release.resour.27 
+  STRING.task4.release.resour.28 STRING......................29 
+  STRING......................30 STRING.task5.get.resource1..31 
+  STRING.task5.get.resource1..32 STRING.task5.release.resour.33 
+  STRING.task5.release.resour.34 STRING......................35 
+  STRING.task6.wait.event..0x.36 STRING.task6.get.event...d..37 
+  STRING......................38 STRING.task6.get.resource2..39 
+  STRING.task6.get.resource2..40 STRING.task6.release.resour.41 
+  STRING.task6.release.resour.42 STRING......................43 
+  STRING.task7.wait.event..0x.44 STRING.task7.get.event...d..45 
+  STRING......................46 STRING.task7.get.resource3..47 
+  STRING.task7.get.resource3..48 STRING.task7.release.resour.49 
+  STRING.task7.release.resour.50 STRING......................51 
+  STRING.task8.wait.event..0x.52 STRING.task8.get.event...d..53 
+  STRING......................54 STRING.task8.get.resource1..55 
+  STRING.task8.get.resource1..56 STRING.task8.release.resour.57 
+  STRING.task8.release.resour.58 STRING......................59 
+  STRING.task9.wait.event..0x.60 STRING.task9.get.event...d..61 
+  STRING......................62 STRING.task9.get.resource2..63 
+  STRING.task9.get.resource2..64 STRING.task9.release.resour.65 
+  STRING.task9.release.resour.66 STRING......................67 
+  STRING......................68 STRING.task10.get.resource3.69 
+  STRING.task10.get.resource3.70 STRING.task10.release.resou.71 
+  STRING.task10.release.resou.72 STRING......................73 
 SECTION: "NON_BANKED"
-  _BSHL _LSHRU _LCMP _LNEG _LINC _LDEC _COPY _CASE_DIRECT_BYTE 
+  _BSHL _LSHRU _LCMP _LNEG _LCOM _LINC _LDEC _COPY _CASE_DIRECT_BYTE 
   _CASE_CHECKED_BYTE _CASE_SEARCH_8 _CASE_SEARCH_8_BYTE BSP_TimerInit 
   clearIntFlag isrHandler BSP_UartInit PLL_Init HCS12X_ISR_5 HCS12X_ISR_6 
   HCS12X_ISR_7 HCS12X_ISR_8 HCS12X_ISR_9 HCS12X_ISR_10 HCS12X_ISR_11 
@@ -4687,8 +4698,8 @@ OBJECT LIST SORTED BY ADDRESS
      osekConfig_InterruptTypeTable             2200      80     128       1   .data       
      osekConfig_InterruptEntryTable            2280     180     384       2   .data       
      osekConfig_CounterTable                   2400       C      12       1   .data       
-     osekConfig_ResourcePriorityTable          240C       6       6       1   .data       
-     osekConfig_AlarmTable                     2412      48      72       5   .data       
+     osekConfig_AlarmTable                     240C      48      72       5   .data       
+     osekConfig_ResourcePriorityTable          2454       6       6       1   .data       
      osekTask_PriorityIndexTable               245A     100     256       2   .data       
      pbuf                                      255A       7       7      10   .bss        
      isr2Stack                                 2561     400    1024       1   .bss        
@@ -4698,7 +4709,7 @@ OBJECT LIST SORTED BY ADDRESS
      osekAlarm_AlarmTable                      2F04      B8     184      15   .common     
      osekCounter_CounterTable                  2FBC      12      18      20   .common     
      osekExecution_CurrentAppMode              2FCE       1       1       1   .common     
-     osekInterrupt_NestedLevl                  2FCF       4       4      25   .common     
+     osekInterrupt_NestedLevl                  2FCF       4       4      27   .common     
      osekInterrupt_IsrStackTop                 2FD3       2       2       2   .common     
      osekResource_ResourceTable                2FD5      1B      27      22   .common     
      osekTarget_SavedBTSP                      2FF0       2       2       4   .common     
@@ -4706,8 +4717,8 @@ OBJECT LIST SORTED BY ADDRESS
      osekTask_PriorityBitMap                   3072       4       4      11   .common     
      osekTask_PriorityBitMapMajor              3076       1       1      13   .common     
      osekTask_FreeReadyBlock                   3077       2       2       6   .common     
-     osekTask_TaskTable                        3079     129     297       5   .common     
-     osekTask_RunningTask                      31A2       2       2      30   .common     
+     osekTask_TaskTable                        3079     129     297       8   .common     
+     osekTask_RunningTask                      31A2       2       2      32   .common     
      osekTask_SchedulerLockLevel               31A4       4       4      12   .common     
      osekTask_IsrTriggeredTaskSwitchNecessary       31A8       4       4       8   .common     
      osekTask_ReadyBlock                       31AC      2C      44       3   .common     
@@ -4724,197 +4735,205 @@ OBJECT LIST SORTED BY ADDRESS
      STRING.taskState..waiting..6              C222      14      20       1   .rodata1    
      STRING.taskState..ready..7                C236      12      18       1   .rodata1    
      STRING.taskState..suspended.8             C248      16      22       1   .rodata1    
-     STRING......................9             C25E      3C      60       1   .rodata1    
-     STRING.task.1.sets.alarms.f.10            C29A      27      39       1   .rodata1    
-     STRING.task.1.activates.Tas.11            C2C1      1C      28       1   .rodata1    
-     STRING......................12            C2DD      3C      60       1   .rodata1    
-     STRING......................13            C319      3C      60       1   .rodata1    
-     STRING.task2.requests.Resou.14            C355      1C      28       1   .rodata1    
-     STRING.Task.2.activated.by..15            C371      2B      43       1   .rodata1    
-     STRING.task2.releases.Resou.16            C39C      1C      28       1   .rodata1    
-     STRING......................17            C3B8      3C      60       1   .rodata1    
-     STRING......................18            C3F4      3C      60       1   .rodata1    
-     STRING.task3.requests.Resou.19            C430      1C      28       1   .rodata1    
-     STRING.Task.3.activated.by..20            C44C      2B      43       1   .rodata1    
-     STRING.task3.releases.Resou.21            C477      1C      28       1   .rodata1    
-     STRING......................22            C493      3C      60       1   .rodata1    
-     STRING......................23            C4CF      3C      60       1   .rodata1    
-     STRING.task4.requests.Resou.24            C50B      1C      28       1   .rodata1    
-     STRING.Task.4.activated.by..25            C527      2B      43       1   .rodata1    
-     STRING.task4.releases.Resou.26            C552      1C      28       1   .rodata1    
-     STRING......................27            C56E      3C      60       1   .rodata1    
-     STRING......................28            C5AA      3C      60       1   .rodata1    
-     STRING.task5.requests.Resou.29            C5E6      1C      28       1   .rodata1    
-     STRING.Task.5.activated.by..30            C602      2B      43       1   .rodata1    
-     STRING.task5.releases.Resou.31            C62D      1C      28       1   .rodata1    
-     STRING......................32            C649      3C      60       1   .rodata1    
-     STRING......................33            C685      3C      60       1   .rodata1    
-     STRING.task6.waiting.for.Ev.34            C6C1      2D      45       1   .rodata1    
-     STRING.task6.event.received.35            C6EE      17      23       1   .rodata1    
-     STRING.task6.requests.Resou.36            C705      1C      28       1   .rodata1    
-     STRING.Task.6.reactivated.b.37            C721      33      51       1   .rodata1    
-     STRING.task6.releases.Resou.38            C754      1C      28       1   .rodata1    
-     STRING......................39            C770      3C      60       1   .rodata1    
-     STRING......................40            C7AC      3C      60       1   .rodata1    
-     STRING.task7.waiting.for.Ev.41            C7E8      2D      45       1   .rodata1    
-     STRING.task7.event.received.42            C815      17      23       1   .rodata1    
-     STRING.task7.requests.Resou.43            C82C      1C      28       1   .rodata1    
-     STRING.Task.7.reactivated.b.44            C848      33      51       1   .rodata1    
-     STRING.task7.releases.Resou.45            C87B      1C      28       1   .rodata1    
-     STRING......................46            C897      3C      60       1   .rodata1    
-     STRING......................47            C8D3      3C      60       1   .rodata1    
-     STRING.task8.waiting.for.Ev.48            C90F      2D      45       1   .rodata1    
-     STRING.task8.event.received.49            C93C      17      23       1   .rodata1    
-     STRING.task8.requests.Resou.50            C953      1C      28       1   .rodata1    
-     STRING.Task.8.reactivated.b.51            C96F      33      51       1   .rodata1    
-     STRING.task8.releases.Resou.52            C9A2      1C      28       1   .rodata1    
-     STRING......................53            C9BE      3C      60       1   .rodata1    
-     STRING......................54            C9FA      3C      60       1   .rodata1    
-     STRING.task9.waiting.for.Ev.55            CA36      2D      45       1   .rodata1    
-     STRING.task9.event.received.56            CA63      17      23       1   .rodata1    
-     STRING.task9.requests.Resou.57            CA7A      1C      28       1   .rodata1    
-     STRING.Task.9.reactivated.b.58            CA96      33      51       1   .rodata1    
-     STRING.task9.releases.Resou.59            CAC9      1C      28       1   .rodata1    
-     STRING......................60            CAE5      3C      60       1   .rodata1    
-     STRING......................61            CB21      3D      61       1   .rodata1    
-     STRING.task10.requests.Reso.62            CB5E      1D      29       1   .rodata1    
-     STRING.Task.10.activated.di.63            CB7B      34      52       1   .rodata1    
-     STRING.task10.releases.Reso.64            CBAF      1D      29       1   .rodata1    
-     STRING......................65            CBCC      3D      61       1   .rodata1    
-     _BSHL                                     CC09       8       8      10   NON_BANKED  
-     _LSHRU                                    CC11       E      14       2   NON_BANKED  
-     _LCMP                                     CC1F       A      10       6   NON_BANKED  
-     _LNEG                                     CC29       9       9       1   NON_BANKED  
-     _LINC                                     CC32       5       5       4   NON_BANKED  
-     _LDEC                                     CC37       8       8       5   NON_BANKED  
-     _COPY                                     CC3F       8       8       2   NON_BANKED  
-     _CASE_DIRECT_BYTE                         CC47       5       5       4   NON_BANKED  
-     _CASE_CHECKED_BYTE                        CC4C      14      20       1   NON_BANKED  
-     _CASE_SEARCH_8                            CC60      17      23       1   NON_BANKED  
-     _CASE_SEARCH_8_BYTE                       CC77      1A      26       1   NON_BANKED  
-     BSP_TimerInit                             CC91      22      34       2   NON_BANKED  
-     clearIntFlag                              CCB3      DC     220       2   NON_BANKED  
-     isrHandler                                CD8F      8C     140     230   NON_BANKED  
-     BSP_UartInit                              CE1B       B      11       2   NON_BANKED  
-     PLL_Init                                  CE26      15      21       2   NON_BANKED  
-     HCS12X_ISR_5                              CE3B       7       7       1   NON_BANKED  
-     HCS12X_ISR_6                              CE42       7       7       1   NON_BANKED  
-     HCS12X_ISR_7                              CE49       7       7       1   NON_BANKED  
-     HCS12X_ISR_8                              CE50       7       7       1   NON_BANKED  
-     HCS12X_ISR_9                              CE57       7       7       1   NON_BANKED  
-     HCS12X_ISR_10                             CE5E       7       7       1   NON_BANKED  
-     HCS12X_ISR_11                             CE65       7       7       1   NON_BANKED  
-     HCS12X_ISR_12                             CE6C       7       7       1   NON_BANKED  
-     HCS12X_ISR_13                             CE73       7       7       1   NON_BANKED  
-     HCS12X_ISR_14                             CE7A       7       7       1   NON_BANKED  
-     HCS12X_ISR_15                             CE81       7       7       1   NON_BANKED  
-     HCS12X_ISR_16                             CE88       7       7       1   NON_BANKED  
-     HCS12X_ISR_17                             CE8F       7       7       1   NON_BANKED  
-     HCS12X_ISR_18                             CE96       7       7       1   NON_BANKED  
-     HCS12X_ISR_19                             CE9D       7       7       1   NON_BANKED  
-     HCS12X_ISR_20                             CEA4       7       7       1   NON_BANKED  
-     HCS12X_ISR_21                             CEAB       7       7       1   NON_BANKED  
-     HCS12X_ISR_22                             CEB2       7       7       1   NON_BANKED  
-     HCS12X_ISR_23                             CEB9       7       7       1   NON_BANKED  
-     HCS12X_ISR_24                             CEC0       7       7       1   NON_BANKED  
-     HCS12X_ISR_25                             CEC7       7       7       1   NON_BANKED  
-     HCS12X_ISR_26                             CECE       7       7       1   NON_BANKED  
-     HCS12X_ISR_27                             CED5       7       7       1   NON_BANKED  
-     HCS12X_ISR_28                             CEDC       7       7       1   NON_BANKED  
-     HCS12X_ISR_29                             CEE3       7       7       1   NON_BANKED  
-     HCS12X_ISR_30                             CEEA       7       7       1   NON_BANKED  
-     HCS12X_ISR_31                             CEF1       7       7       1   NON_BANKED  
-     HCS12X_ISR_32                             CEF8       7       7       1   NON_BANKED  
-     HCS12X_ISR_33                             CEFF       7       7       1   NON_BANKED  
-     HCS12X_ISR_34                             CF06       7       7       1   NON_BANKED  
-     HCS12X_ISR_35                             CF0D       7       7       1   NON_BANKED  
-     HCS12X_ISR_36                             CF14       7       7       1   NON_BANKED  
-     HCS12X_ISR_37                             CF1B       7       7       1   NON_BANKED  
-     HCS12X_ISR_38                             CF22       7       7       1   NON_BANKED  
-     HCS12X_ISR_39                             CF29       7       7       1   NON_BANKED  
-     HCS12X_ISR_40                             CF30       7       7       1   NON_BANKED  
-     HCS12X_ISR_41                             CF37       7       7       1   NON_BANKED  
-     HCS12X_ISR_42                             CF3E       7       7       1   NON_BANKED  
-     HCS12X_ISR_43                             CF45       7       7       1   NON_BANKED  
-     HCS12X_ISR_44                             CF4C       7       7       1   NON_BANKED  
-     HCS12X_ISR_45                             CF53       7       7       1   NON_BANKED  
-     HCS12X_ISR_46                             CF5A       7       7       1   NON_BANKED  
-     HCS12X_ISR_47                             CF61       7       7       1   NON_BANKED  
-     HCS12X_ISR_48                             CF68       7       7       1   NON_BANKED  
-     HCS12X_ISR_49                             CF6F       7       7       1   NON_BANKED  
-     HCS12X_ISR_50                             CF76       7       7       1   NON_BANKED  
-     HCS12X_ISR_51                             CF7D       7       7       1   NON_BANKED  
-     HCS12X_ISR_52                             CF84       7       7       1   NON_BANKED  
-     HCS12X_ISR_53                             CF8B       7       7       1   NON_BANKED  
-     HCS12X_ISR_54                             CF92       7       7       1   NON_BANKED  
-     HCS12X_ISR_55                             CF99       7       7       1   NON_BANKED  
-     HCS12X_ISR_56                             CFA0       7       7       1   NON_BANKED  
-     HCS12X_ISR_57                             CFA7       7       7       1   NON_BANKED  
-     HCS12X_ISR_58                             CFAE       7       7       1   NON_BANKED  
-     HCS12X_ISR_59                             CFB5       7       7       1   NON_BANKED  
-     HCS12X_ISR_60                             CFBC       7       7       1   NON_BANKED  
-     HCS12X_ISR_61                             CFC3       7       7       1   NON_BANKED  
-     HCS12X_ISR_62                             CFCA       7       7       1   NON_BANKED  
-     HCS12X_ISR_63                             CFD1       7       7       1   NON_BANKED  
-     HCS12X_ISR_64                             CFD8       7       7       1   NON_BANKED  
-     HCS12X_ISR_65                             CFDF       7       7       1   NON_BANKED  
-     HCS12X_ISR_66                             CFE6       7       7       1   NON_BANKED  
-     HCS12X_ISR_67                             CFED       7       7       1   NON_BANKED  
-     HCS12X_ISR_68                             CFF4       7       7       1   NON_BANKED  
-     HCS12X_ISR_69                             CFFB       7       7       1   NON_BANKED  
-     HCS12X_ISR_70                             D002       7       7       1   NON_BANKED  
-     HCS12X_ISR_71                             D009       7       7       1   NON_BANKED  
-     HCS12X_ISR_72                             D010       7       7       1   NON_BANKED  
-     HCS12X_ISR_73                             D017       7       7       1   NON_BANKED  
-     HCS12X_ISR_74                             D01E       7       7       1   NON_BANKED  
-     HCS12X_ISR_75                             D025       7       7       1   NON_BANKED  
-     HCS12X_ISR_76                             D02C       7       7       1   NON_BANKED  
-     HCS12X_ISR_77                             D033       7       7       1   NON_BANKED  
-     HCS12X_ISR_78                             D03A       7       7       1   NON_BANKED  
-     HCS12X_ISR_79                             D041       7       7       1   NON_BANKED  
-     HCS12X_ISR_80                             D048       7       7       1   NON_BANKED  
-     HCS12X_ISR_81                             D04F       7       7       1   NON_BANKED  
-     HCS12X_ISR_82                             D056       7       7       1   NON_BANKED  
-     HCS12X_ISR_83                             D05D       7       7       1   NON_BANKED  
-     HCS12X_ISR_84                             D064       7       7       1   NON_BANKED  
-     HCS12X_ISR_85                             D06B       7       7       1   NON_BANKED  
-     HCS12X_ISR_86                             D072       7       7       1   NON_BANKED  
-     HCS12X_ISR_87                             D079       7       7       1   NON_BANKED  
-     HCS12X_ISR_88                             D080       7       7       1   NON_BANKED  
-     HCS12X_ISR_89                             D087       7       7       1   NON_BANKED  
-     HCS12X_ISR_90                             D08E       7       7       1   NON_BANKED  
-     HCS12X_ISR_91                             D095       7       7       1   NON_BANKED  
-     HCS12X_ISR_92                             D09C       7       7       1   NON_BANKED  
-     HCS12X_ISR_93                             D0A3       7       7       1   NON_BANKED  
-     HCS12X_ISR_94                             D0AA       7       7       1   NON_BANKED  
-     HCS12X_ISR_95                             D0B1       7       7       1   NON_BANKED  
-     HCS12X_ISR_96                             D0B8       7       7       1   NON_BANKED  
-     HCS12X_ISR_97                             D0BF       7       7       1   NON_BANKED  
-     HCS12X_ISR_98                             D0C6       7       7       1   NON_BANKED  
-     HCS12X_ISR_99                             D0CD       7       7       1   NON_BANKED  
-     HCS12X_ISR_100                            D0D4       7       7       1   NON_BANKED  
-     HCS12X_ISR_101                            D0DB       7       7       1   NON_BANKED  
-     HCS12X_ISR_102                            D0E2       7       7       1   NON_BANKED  
-     HCS12X_ISR_103                            D0E9       7       7       1   NON_BANKED  
-     HCS12X_ISR_104                            D0F0       7       7       1   NON_BANKED  
-     HCS12X_ISR_105                            D0F7       7       7       1   NON_BANKED  
-     HCS12X_ISR_106                            D0FE       7       7       1   NON_BANKED  
-     HCS12X_ISR_107                            D105       7       7       1   NON_BANKED  
-     HCS12X_ISR_108                            D10C       7       7       1   NON_BANKED  
-     HCS12X_ISR_109                            D113       7       7       1   NON_BANKED  
-     HCS12X_ISR_110                            D11A       7       7       1   NON_BANKED  
-     HCS12X_ISR_111                            D121       7       7       1   NON_BANKED  
-     HCS12X_ISR_112                            D128       7       7       1   NON_BANKED  
-     HCS12X_ISR_113                            D12F       7       7       1   NON_BANKED  
-     HCS12X_ISR_114                            D136       7       7       1   NON_BANKED  
-     HCS12X_ISR_115                            D13D       7       7       1   NON_BANKED  
-     HCS12X_ISR_116                            D144       7       7       1   NON_BANKED  
-     HCS12X_ISR_117                            D14B       7       7       1   NON_BANKED  
-     HCS12X_ISR_118                            D152       7       7       1   NON_BANKED  
-     HCS12X_ISR_119                            D159       7       7       1   NON_BANKED  
-     Ir_RealTimInt                             D160       6       6       2   NON_BANKED  
-     osekTarget_SaveContext                    D166      1B      27       2   NON_BANKED  
-     osekTarget_RestoreContext                 D181      17      23       4   NON_BANKED  
+     STRING......................10            C25E      3C      60       1   .rodata1    
+     STRING......................11            C29A      3C      60       1   .rodata1    
+     STRING......................12            C2D6      3C      60       1   .rodata1    
+     STRING.task2.get.resource1..13            C312      1F      31       1   .rodata1    
+     STRING.task2.get.resource1..14            C331      18      24       1   .rodata1    
+     STRING.task2.release.resour.15            C349      23      35       1   .rodata1    
+     STRING.task2.release.resour.16            C36C      1C      28       1   .rodata1    
+     STRING......................17            C388      3C      60       1   .rodata1    
+     STRING......................18            C3C4      3C      60       1   .rodata1    
+     STRING.task3.get.resource2..19            C400      1F      31       1   .rodata1    
+     STRING.task3.get.resource2..20            C41F      18      24       1   .rodata1    
+     STRING.task3.release.resour.21            C437      23      35       1   .rodata1    
+     STRING.task3.release.resour.22            C45A      1C      28       1   .rodata1    
+     STRING......................23            C476      3C      60       1   .rodata1    
+     STRING......................24            C4B2      3C      60       1   .rodata1    
+     STRING.task4.get.resource3..25            C4EE      1F      31       1   .rodata1    
+     STRING.task4.get.resource3..26            C50D      18      24       1   .rodata1    
+     STRING.task4.release.resour.27            C525      23      35       1   .rodata1    
+     STRING.task4.release.resour.28            C548      1C      28       1   .rodata1    
+     STRING......................29            C564      3C      60       1   .rodata1    
+     STRING......................30            C5A0      3C      60       1   .rodata1    
+     STRING.task5.get.resource1..31            C5DC      1F      31       1   .rodata1    
+     STRING.task5.get.resource1..32            C5FB      18      24       1   .rodata1    
+     STRING.task5.release.resour.33            C613      23      35       1   .rodata1    
+     STRING.task5.release.resour.34            C636      1C      28       1   .rodata1    
+     STRING......................35            C652      3C      60       1   .rodata1    
+     STRING.task6.wait.event..0x.36            C68E      18      24       1   .rodata1    
+     STRING.task6.get.event...d..37            C6A6      15      21       1   .rodata1    
+     STRING......................38            C6BB      3C      60       1   .rodata1    
+     STRING.task6.get.resource2..39            C6F7      1F      31       1   .rodata1    
+     STRING.task6.get.resource2..40            C716      18      24       1   .rodata1    
+     STRING.task6.release.resour.41            C72E      23      35       1   .rodata1    
+     STRING.task6.release.resour.42            C751      1C      28       1   .rodata1    
+     STRING......................43            C76D      3C      60       1   .rodata1    
+     STRING.task7.wait.event..0x.44            C7A9      18      24       1   .rodata1    
+     STRING.task7.get.event...d..45            C7C1      15      21       1   .rodata1    
+     STRING......................46            C7D6      3C      60       1   .rodata1    
+     STRING.task7.get.resource3..47            C812      1F      31       1   .rodata1    
+     STRING.task7.get.resource3..48            C831      18      24       1   .rodata1    
+     STRING.task7.release.resour.49            C849      23      35       1   .rodata1    
+     STRING.task7.release.resour.50            C86C      1C      28       1   .rodata1    
+     STRING......................51            C888      3C      60       1   .rodata1    
+     STRING.task8.wait.event..0x.52            C8C4      18      24       1   .rodata1    
+     STRING.task8.get.event...d..53            C8DC      15      21       1   .rodata1    
+     STRING......................54            C8F1      3C      60       1   .rodata1    
+     STRING.task8.get.resource1..55            C92D      1F      31       1   .rodata1    
+     STRING.task8.get.resource1..56            C94C      18      24       1   .rodata1    
+     STRING.task8.release.resour.57            C964      23      35       1   .rodata1    
+     STRING.task8.release.resour.58            C987      1C      28       1   .rodata1    
+     STRING......................59            C9A3      3C      60       1   .rodata1    
+     STRING.task9.wait.event..0x.60            C9DF      18      24       1   .rodata1    
+     STRING.task9.get.event...d..61            C9F7      15      21       1   .rodata1    
+     STRING......................62            CA0C      3C      60       1   .rodata1    
+     STRING.task9.get.resource2..63            CA48      1F      31       1   .rodata1    
+     STRING.task9.get.resource2..64            CA67      18      24       1   .rodata1    
+     STRING.task9.release.resour.65            CA7F      23      35       1   .rodata1    
+     STRING.task9.release.resour.66            CAA2      1C      28       1   .rodata1    
+     STRING......................67            CABE      3C      60       1   .rodata1    
+     STRING......................68            CAFA      3D      61       1   .rodata1    
+     STRING.task10.get.resource3.69            CB37      20      32       1   .rodata1    
+     STRING.task10.get.resource3.70            CB57      19      25       1   .rodata1    
+     STRING.task10.release.resou.71            CB70      24      36       1   .rodata1    
+     STRING.task10.release.resou.72            CB94      1D      29       1   .rodata1    
+     STRING......................73            CBB1      3D      61       1   .rodata1    
+     _BSHL                                     CBEE       8       8      10   NON_BANKED  
+     _LSHRU                                    CBF6       E      14       2   NON_BANKED  
+     _LCMP                                     CC04       A      10       6   NON_BANKED  
+     _LNEG                                     CC0E       9       9       1   NON_BANKED  
+     _LCOM                                     CC17       5       5       1   NON_BANKED  
+     _LINC                                     CC1C       5       5       4   NON_BANKED  
+     _LDEC                                     CC21       8       8       5   NON_BANKED  
+     _COPY                                     CC29       8       8       2   NON_BANKED  
+     _CASE_DIRECT_BYTE                         CC31       5       5       4   NON_BANKED  
+     _CASE_CHECKED_BYTE                        CC36      14      20       1   NON_BANKED  
+     _CASE_SEARCH_8                            CC4A      17      23       1   NON_BANKED  
+     _CASE_SEARCH_8_BYTE                       CC61      1A      26       1   NON_BANKED  
+     BSP_TimerInit                             CC7B      22      34       2   NON_BANKED  
+     clearIntFlag                              CC9D      DC     220       2   NON_BANKED  
+     isrHandler                                CD79      8C     140     230   NON_BANKED  
+     BSP_UartInit                              CE05       B      11       2   NON_BANKED  
+     PLL_Init                                  CE10      15      21       2   NON_BANKED  
+     HCS12X_ISR_5                              CE25       7       7       1   NON_BANKED  
+     HCS12X_ISR_6                              CE2C       7       7       1   NON_BANKED  
+     HCS12X_ISR_7                              CE33       7       7       1   NON_BANKED  
+     HCS12X_ISR_8                              CE3A       7       7       1   NON_BANKED  
+     HCS12X_ISR_9                              CE41       7       7       1   NON_BANKED  
+     HCS12X_ISR_10                             CE48       7       7       1   NON_BANKED  
+     HCS12X_ISR_11                             CE4F       7       7       1   NON_BANKED  
+     HCS12X_ISR_12                             CE56       7       7       1   NON_BANKED  
+     HCS12X_ISR_13                             CE5D       7       7       1   NON_BANKED  
+     HCS12X_ISR_14                             CE64       7       7       1   NON_BANKED  
+     HCS12X_ISR_15                             CE6B       7       7       1   NON_BANKED  
+     HCS12X_ISR_16                             CE72       7       7       1   NON_BANKED  
+     HCS12X_ISR_17                             CE79       7       7       1   NON_BANKED  
+     HCS12X_ISR_18                             CE80       7       7       1   NON_BANKED  
+     HCS12X_ISR_19                             CE87       7       7       1   NON_BANKED  
+     HCS12X_ISR_20                             CE8E       7       7       1   NON_BANKED  
+     HCS12X_ISR_21                             CE95       7       7       1   NON_BANKED  
+     HCS12X_ISR_22                             CE9C       7       7       1   NON_BANKED  
+     HCS12X_ISR_23                             CEA3       7       7       1   NON_BANKED  
+     HCS12X_ISR_24                             CEAA       7       7       1   NON_BANKED  
+     HCS12X_ISR_25                             CEB1       7       7       1   NON_BANKED  
+     HCS12X_ISR_26                             CEB8       7       7       1   NON_BANKED  
+     HCS12X_ISR_27                             CEBF       7       7       1   NON_BANKED  
+     HCS12X_ISR_28                             CEC6       7       7       1   NON_BANKED  
+     HCS12X_ISR_29                             CECD       7       7       1   NON_BANKED  
+     HCS12X_ISR_30                             CED4       7       7       1   NON_BANKED  
+     HCS12X_ISR_31                             CEDB       7       7       1   NON_BANKED  
+     HCS12X_ISR_32                             CEE2       7       7       1   NON_BANKED  
+     HCS12X_ISR_33                             CEE9       7       7       1   NON_BANKED  
+     HCS12X_ISR_34                             CEF0       7       7       1   NON_BANKED  
+     HCS12X_ISR_35                             CEF7       7       7       1   NON_BANKED  
+     HCS12X_ISR_36                             CEFE       7       7       1   NON_BANKED  
+     HCS12X_ISR_37                             CF05       7       7       1   NON_BANKED  
+     HCS12X_ISR_38                             CF0C       7       7       1   NON_BANKED  
+     HCS12X_ISR_39                             CF13       7       7       1   NON_BANKED  
+     HCS12X_ISR_40                             CF1A       7       7       1   NON_BANKED  
+     HCS12X_ISR_41                             CF21       7       7       1   NON_BANKED  
+     HCS12X_ISR_42                             CF28       7       7       1   NON_BANKED  
+     HCS12X_ISR_43                             CF2F       7       7       1   NON_BANKED  
+     HCS12X_ISR_44                             CF36       7       7       1   NON_BANKED  
+     HCS12X_ISR_45                             CF3D       7       7       1   NON_BANKED  
+     HCS12X_ISR_46                             CF44       7       7       1   NON_BANKED  
+     HCS12X_ISR_47                             CF4B       7       7       1   NON_BANKED  
+     HCS12X_ISR_48                             CF52       7       7       1   NON_BANKED  
+     HCS12X_ISR_49                             CF59       7       7       1   NON_BANKED  
+     HCS12X_ISR_50                             CF60       7       7       1   NON_BANKED  
+     HCS12X_ISR_51                             CF67       7       7       1   NON_BANKED  
+     HCS12X_ISR_52                             CF6E       7       7       1   NON_BANKED  
+     HCS12X_ISR_53                             CF75       7       7       1   NON_BANKED  
+     HCS12X_ISR_54                             CF7C       7       7       1   NON_BANKED  
+     HCS12X_ISR_55                             CF83       7       7       1   NON_BANKED  
+     HCS12X_ISR_56                             CF8A       7       7       1   NON_BANKED  
+     HCS12X_ISR_57                             CF91       7       7       1   NON_BANKED  
+     HCS12X_ISR_58                             CF98       7       7       1   NON_BANKED  
+     HCS12X_ISR_59                             CF9F       7       7       1   NON_BANKED  
+     HCS12X_ISR_60                             CFA6       7       7       1   NON_BANKED  
+     HCS12X_ISR_61                             CFAD       7       7       1   NON_BANKED  
+     HCS12X_ISR_62                             CFB4       7       7       1   NON_BANKED  
+     HCS12X_ISR_63                             CFBB       7       7       1   NON_BANKED  
+     HCS12X_ISR_64                             CFC2       7       7       1   NON_BANKED  
+     HCS12X_ISR_65                             CFC9       7       7       1   NON_BANKED  
+     HCS12X_ISR_66                             CFD0       7       7       1   NON_BANKED  
+     HCS12X_ISR_67                             CFD7       7       7       1   NON_BANKED  
+     HCS12X_ISR_68                             CFDE       7       7       1   NON_BANKED  
+     HCS12X_ISR_69                             CFE5       7       7       1   NON_BANKED  
+     HCS12X_ISR_70                             CFEC       7       7       1   NON_BANKED  
+     HCS12X_ISR_71                             CFF3       7       7       1   NON_BANKED  
+     HCS12X_ISR_72                             CFFA       7       7       1   NON_BANKED  
+     HCS12X_ISR_73                             D001       7       7       1   NON_BANKED  
+     HCS12X_ISR_74                             D008       7       7       1   NON_BANKED  
+     HCS12X_ISR_75                             D00F       7       7       1   NON_BANKED  
+     HCS12X_ISR_76                             D016       7       7       1   NON_BANKED  
+     HCS12X_ISR_77                             D01D       7       7       1   NON_BANKED  
+     HCS12X_ISR_78                             D024       7       7       1   NON_BANKED  
+     HCS12X_ISR_79                             D02B       7       7       1   NON_BANKED  
+     HCS12X_ISR_80                             D032       7       7       1   NON_BANKED  
+     HCS12X_ISR_81                             D039       7       7       1   NON_BANKED  
+     HCS12X_ISR_82                             D040       7       7       1   NON_BANKED  
+     HCS12X_ISR_83                             D047       7       7       1   NON_BANKED  
+     HCS12X_ISR_84                             D04E       7       7       1   NON_BANKED  
+     HCS12X_ISR_85                             D055       7       7       1   NON_BANKED  
+     HCS12X_ISR_86                             D05C       7       7       1   NON_BANKED  
+     HCS12X_ISR_87                             D063       7       7       1   NON_BANKED  
+     HCS12X_ISR_88                             D06A       7       7       1   NON_BANKED  
+     HCS12X_ISR_89                             D071       7       7       1   NON_BANKED  
+     HCS12X_ISR_90                             D078       7       7       1   NON_BANKED  
+     HCS12X_ISR_91                             D07F       7       7       1   NON_BANKED  
+     HCS12X_ISR_92                             D086       7       7       1   NON_BANKED  
+     HCS12X_ISR_93                             D08D       7       7       1   NON_BANKED  
+     HCS12X_ISR_94                             D094       7       7       1   NON_BANKED  
+     HCS12X_ISR_95                             D09B       7       7       1   NON_BANKED  
+     HCS12X_ISR_96                             D0A2       7       7       1   NON_BANKED  
+     HCS12X_ISR_97                             D0A9       7       7       1   NON_BANKED  
+     HCS12X_ISR_98                             D0B0       7       7       1   NON_BANKED  
+     HCS12X_ISR_99                             D0B7       7       7       1   NON_BANKED  
+     HCS12X_ISR_100                            D0BE       7       7       1   NON_BANKED  
+     HCS12X_ISR_101                            D0C5       7       7       1   NON_BANKED  
+     HCS12X_ISR_102                            D0CC       7       7       1   NON_BANKED  
+     HCS12X_ISR_103                            D0D3       7       7       1   NON_BANKED  
+     HCS12X_ISR_104                            D0DA       7       7       1   NON_BANKED  
+     HCS12X_ISR_105                            D0E1       7       7       1   NON_BANKED  
+     HCS12X_ISR_106                            D0E8       7       7       1   NON_BANKED  
+     HCS12X_ISR_107                            D0EF       7       7       1   NON_BANKED  
+     HCS12X_ISR_108                            D0F6       7       7       1   NON_BANKED  
+     HCS12X_ISR_109                            D0FD       7       7       1   NON_BANKED  
+     HCS12X_ISR_110                            D104       7       7       1   NON_BANKED  
+     HCS12X_ISR_111                            D10B       7       7       1   NON_BANKED  
+     HCS12X_ISR_112                            D112       7       7       1   NON_BANKED  
+     HCS12X_ISR_113                            D119       7       7       1   NON_BANKED  
+     HCS12X_ISR_114                            D120       7       7       1   NON_BANKED  
+     HCS12X_ISR_115                            D127       7       7       1   NON_BANKED  
+     HCS12X_ISR_116                            D12E       7       7       1   NON_BANKED  
+     HCS12X_ISR_117                            D135       7       7       1   NON_BANKED  
+     HCS12X_ISR_118                            D13C       7       7       1   NON_BANKED  
+     HCS12X_ISR_119                            D143       7       7       1   NON_BANKED  
+     Ir_RealTimInt                             D14A       6       6       2   NON_BANKED  
+     osekTarget_SaveContext                    D150      1B      27       2   NON_BANKED  
+     osekTarget_RestoreContext                 D16B      17      23       4   NON_BANKED  
      _Vector_119                               FF10       2       2       0   .abs_section_ff10
      _Vector_118                               FF12       2       2       0   .abs_section_ff12
      _Vector_117                               FF14       2       2       0   .abs_section_ff14
@@ -5031,7 +5050,7 @@ OBJECT LIST SORTED BY ADDRESS
      _Vector_6                                 FFF2       2       2       0   .abs_section_fff2
      _Vector_5                                 FFF4       2       2       0   .abs_section_fff4
      Init                                    FE8000      29      41       2   .text       
-     printf                                  FE8029      17      23     124   .text       
+     printf                                  FE8029      17      23     138   .text       
      vprintf                                 FE8040     44F    1103      53   .text       
      _out                                    FE848F       9       9       2   .text       
      set_printf                              FE8498       F      15       2   .text       
@@ -5039,49 +5058,49 @@ OBJECT LIST SORTED BY ADDRESS
      TERMIO_PutChar                          FE84BE       9       9       3   .text       
      main                                    FE84C7      12      18       2   .text       
      showLogo                                FE84D9      1C      28       2   .text       
-     showTaskInfo                            FE84F5      48      72      20   .text       
-     FuncTask1                               FE853D      D0     208       2   .text       
-     FuncTask2                               FE860D      52      82       2   .text       
-     FuncTask3                               FE865F      52      82       2   .text       
-     FuncTask4                               FE86B1      52      82       2   .text       
-     FuncTask5                               FE8703      52      82       2   .text       
-     FuncTask6                               FE8755      6D     109       2   .text       
-     FuncTask7                               FE87C2      6D     109       2   .text       
-     FuncTask8                               FE882F      6D     109       2   .text       
-     FuncTask9                               FE889C      6D     109       2   .text       
-     FuncTask10                              FE8909      52      82       2   .text       
-     FuncIdle                                FE895B       2       2       2   .text       
-     SetAlarm                                FE895D      72     114       2   .text       
-     SetRelAlarm                             FE89CF      DF     223      18   .text       
-     NotifyAlarm                             FE8AAE      32      50       2   .text       
-     osekAlarm_Check1                        FE8AE0      35      53       2   .text       
-     osekAlarm_Check2                        FE8B15      79     121       4   .text       
-     osekAlarm_Initialize                    FE8B8E      56      86       2   .text       
-     CounterTrigger                          FE8BE4      4F      79       2   .text       
-     osekCounter_Initialize                  FE8C33      2A      42       2   .text       
-     osekEvent_SetEvent                      FE8C5D      57      87       2   .text       
-     WaitEvent                               FE8CB4      73     115       8   .text       
-     StartOS                                 FE8D27      2B      43       2   .text       
-     osekInterrupt_Initialize                FE8D52       A      10       2   .text       
-     InitCOM                                 FE8D5C       2       2       2   .text       
-     GetResource                             FE8D5E      9E     158      18   .text       
-     ReleaseResource                         FE8DFC      DB     219      19   .text       
-     osekResource_Initialize                 FE8ED7      34      52       2   .text       
-     AddTask2ReadyTableAtHead                FE8F0B      1E      30       2   .text       
-     AddaReadyBlock                          FE8F29      B6     182       7   .text       
-     ReleaseReadyBlock                       FE8FDF       B      11       4   .text       
-     MoveTaskFromReadyTable                  FE8FEA      13      19       6   .text       
-     osekTask_ChangeRunningTaskPriority      FE8FFD      7E     126       4   .text       
-     osekTask_ActiveTask                     FE907B      50      80       4   .text       
-     osekTask_WakeTask                       FE90CB      3C      60       2   .text       
-     osekTask_WaitTask                       FE9107      5B      91       2   .text       
-     ActivateTask                            FE9162      4B      75       2   .text       
-     TerminateTask                           FE91AD      91     145      20   .text       
-     osekTask_Dispatch                       FE923E      AF     175      14   .text       
-     osekTask_TerminateDispatch              FE92ED      6B     107       2   .text       
-     GetTaskState                            FE9358      3D      61       2   .text       
-     GetTaskID                               FE9395      27      39      20   .text       
-     osekTask_Initialize                     FE93BC      CB     203       3   .text       
+     showTaskInfo                            FE84F5      48      72      18   .text       
+     FuncTask1                               FE853D      BD     189       2   .text       
+     FuncTask2                               FE85FA      6D     109       2   .text       
+     FuncTask3                               FE8667      6D     109       2   .text       
+     FuncTask4                               FE86D4      65     101       2   .text       
+     FuncTask5                               FE8739      6D     109       2   .text       
+     FuncTask6                               FE87A6      A5     165       2   .text       
+     FuncTask7                               FE884B      A5     165       2   .text       
+     FuncTask8                               FE88F0      A5     165       2   .text       
+     FuncTask9                               FE8995      A5     165       2   .text       
+     FuncTask10                              FE8A3A      6D     109       2   .text       
+     SetAlarm                                FE8AA7      72     114       2   .text       
+     SetRelAlarm                             FE8B19      DF     223      18   .text       
+     NotifyAlarm                             FE8BF8      32      50       2   .text       
+     osekAlarm_Check1                        FE8C2A      35      53       2   .text       
+     osekAlarm_Check2                        FE8C5F      79     121       4   .text       
+     osekAlarm_Initialize                    FE8CD8      56      86       2   .text       
+     CounterTrigger                          FE8D2E      4F      79       2   .text       
+     osekCounter_Initialize                  FE8D7D      2A      42       2   .text       
+     osekEvent_SetEvent                      FE8DA7      57      87       2   .text       
+     ClearEvent                              FE8DFE      4A      74       8   .text       
+     WaitEvent                               FE8E48      73     115       8   .text       
+     GetEvent                                FE8EBB      3F      63       8   .text       
+     StartOS                                 FE8EFA      2B      43       2   .text       
+     osekInterrupt_Initialize                FE8F25       A      10       2   .text       
+     InitCOM                                 FE8F2F       2       2       2   .text       
+     GetResource                             FE8F31      9E     158      18   .text       
+     ReleaseResource                         FE8FCF      DB     219      19   .text       
+     osekResource_Initialize                 FE90AA      34      52       2   .text       
+     AddTask2ReadyTableAtHead                FE90DE      1E      30       2   .text       
+     AddaReadyBlock                          FE90FC      B6     182       7   .text       
+     ReleaseReadyBlock                       FE91B2       B      11       4   .text       
+     MoveTaskFromReadyTable                  FE91BD      13      19       6   .text       
+     osekTask_ChangeRunningTaskPriority      FE91D0      7E     126       4   .text       
+     osekTask_ActiveTask                     FE924E      50      80       2   .text       
+     osekTask_WakeTask                       FE929E      3C      60       2   .text       
+     osekTask_WaitTask                       FE92DA      5B      91       2   .text       
+     TerminateTask                           FE9335      91     145      20   .text       
+     osekTask_Dispatch                       FE93C6      AF     175      12   .text       
+     osekTask_TerminateDispatch              FE9475      6B     107       2   .text       
+     GetTaskState                            FE94E0      3D      61       2   .text       
+     GetTaskID                               FE951D      27      39      20   .text       
+     osekTask_Initialize                     FE9544      CB     203       3   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -5098,14 +5117,14 @@ STRING.C.o (ansixbi.lib):
   strncmp strchr strrchr strspn strcspn strpbrk strstr strtok strcoll strxfrm 
 rtshc12.c.o (ansixbi.lib):
   _BSHRS _BSHRU _BDIVMODU _BDIVMODS _ISHL _ISHRU _ISHRS _LSHL _LSHRS _LADD 
-  _LSUB _LAND _LOR _LXOR _LCMP_P _LCMP_PP _LCOM _LMUL _LMULU16x32 _LMULS16x32 
+  _LSUB _LAND _LOR _LXOR _LCMP_P _LCMP_PP _LMUL _LMULU16x32 _LMULS16x32 
   _lDivMod _LDIVU _NEG_P _LDIVS _LMODU _LMODS _ILSEXT _CASE_DIRECT 
   _CASE_CHECKED _CASE_SEARCH _CASE_SEARCH_BYTE _FCALL _FPCMP _PADD _PSUB _PINC 
   _PDEC 
 init.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable TERMIO_GetChar 
-  TERMIO_Init 
+  TERMIO_Init printWithResource 
 cfg.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable MessageInit 
@@ -5119,8 +5138,7 @@ osekCounter.c.o:
   GetCounterValue GetCounterInfo 
 osekEvent.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
-  AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable SetEvent ClearEvent 
-  GetEvent 
+  AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable SetEvent 
 osekExecution.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable ShutdownOS 
@@ -5132,7 +5150,7 @@ osekInterrupt.c.o:
 osekMessage.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable Msg_Init SendMessage 
-  ReceiveMessage msg_SignalMessage msg_LockMessage StartCOM CloseCOM StopCOM 
+  ReceiveMessage msg_LockMessage StartCOM CloseCOM StopCOM 
 osekResource.c.o:
   ClearPriorityMap AddTask2ReadyTableAtTail AddTask2ReadyTableAtHead 
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable 
@@ -5141,7 +5159,7 @@ osekTarget.c.o:
   AddaReadyBlock ReleaseReadyBlock MoveTaskFromReadyTable int_mask_save 
   int_mask_restore int_fit_restore int_vector_save 
 osekTask.c.o:
-  ClearPriorityMap AddTask2ReadyTableAtTail ChainTask Schedule 
+  ClearPriorityMap AddTask2ReadyTableAtTail ActivateTask ChainTask Schedule 
 NOT USED VARIABLES
 EMBEDDED.C.o (ansixbi.lib):
   STRING..1 
@@ -5149,6 +5167,8 @@ STRING.C.o (ansixbi.lib):
   STRING..1 next.2 
 rtshc12.c.o (ansixbi.lib):
   _PowOfTwo_8 _PowOfTwo_16 _PowOfTwo_32 errno 
+init.c.o:
+  STRING..s..9 
 cfg.c.o:
   osekConfig_MsgTable messageBuf messageQueue 
 osekInterrupt.c.o:
@@ -5162,10 +5182,10 @@ osekTarget.c.o:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xD198 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xD182 ---- SIZE       4 ---
 Filling bytes inserted
  00802200
-------- ROM-ADDRESS: 0xD19C ---- RAM-ADDRESS: 0x2200 ---- SIZE     128 ---
+------- ROM-ADDRESS: 0xD186 ---- RAM-ADDRESS: 0x2200 ---- SIZE     128 ---
 Name of initialized Object : osekConfig_InterruptTypeTable
  0202020202 0202020202 0202020202
  0202020202 0202020202 0202020202
@@ -5176,76 +5196,76 @@ Name of initialized Object : osekConfig_InterruptTypeTable
  0202020202 0202020202 0202020202
  0202020202 0202020202 0202020202
  0202020202 020202
-------- ROM-ADDRESS: 0xD21C ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xD206 ---- SIZE       4 ---
 Filling bytes inserted
- 00022340
-------- ROM-ADDRESS: 0xD220 ---- RAM-ADDRESS: 0x2340 ---- SIZE       2 ---
-Name of initialized Object : osekConfig_InterruptEntryTable:192
- D160
-------- ROM-ADDRESS: 0xD222 ---- SIZE       4 ---
+ 00022346
+------- ROM-ADDRESS: 0xD20A ---- RAM-ADDRESS: 0x2346 ---- SIZE       2 ---
+Name of initialized Object : osekConfig_InterruptEntryTable:198
+ D14A
+------- ROM-ADDRESS: 0xD20C ---- SIZE       4 ---
 Filling bytes inserted
  01582402
-------- ROM-ADDRESS: 0xD226 ---- RAM-ADDRESS: 0x2402 ---- SIZE      10 ---
+------- ROM-ADDRESS: 0xD210 ---- RAM-ADDRESS: 0x2402 ---- SIZE      10 ---
 Name of initialized Object : osekConfig_CounterTable:2
  7FFF000000 0100000001
-------- ROM-ADDRESS: 0xD230 ---- SIZE       1 ---
-Filling bytes inserted
- 00
-------- ROM-ADDRESS: 0xD231 ---- RAM-ADDRESS: 0x240D ---- SIZE       5 ---
-Name of initialized Object : osekConfig_ResourcePriorityTable:1
- 1F001F001F
-------- ROM-ADDRESS: 0xD236 ---- SIZE       3 ---
+------- ROM-ADDRESS: 0xD21A ---- SIZE       3 ---
 Filling bytes inserted
  000000
-------- ROM-ADDRESS: 0xD239 ---- RAM-ADDRESS: 0x2415 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xD21D ---- RAM-ADDRESS: 0x240F ---- SIZE       1 ---
 Name of initialized Object : osekConfig_AlarmTable:3
  01
-------- ROM-ADDRESS: 0xD23A ---- SIZE       8 ---
+------- ROM-ADDRESS: 0xD21E ---- SIZE       8 ---
 Filling bytes inserted
  0000000000 000000
-------- ROM-ADDRESS: 0xD242 ---- RAM-ADDRESS: 0x241E ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xD226 ---- RAM-ADDRESS: 0x2418 ---- SIZE       1 ---
 Name of initialized Object : osekConfig_AlarmTable:12
  02
-------- ROM-ADDRESS: 0xD243 ---- SIZE       8 ---
+------- ROM-ADDRESS: 0xD227 ---- SIZE       8 ---
 Filling bytes inserted
  0000000000 000000
-------- ROM-ADDRESS: 0xD24B ---- RAM-ADDRESS: 0x2427 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xD22F ---- RAM-ADDRESS: 0x2421 ---- SIZE       1 ---
 Name of initialized Object : osekConfig_AlarmTable:21
  03
-------- ROM-ADDRESS: 0xD24C ---- SIZE       8 ---
+------- ROM-ADDRESS: 0xD230 ---- SIZE       8 ---
 Filling bytes inserted
  0000000000 000000
-------- ROM-ADDRESS: 0xD254 ---- RAM-ADDRESS: 0x2430 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xD238 ---- RAM-ADDRESS: 0x242A ---- SIZE       1 ---
 Name of initialized Object : osekConfig_AlarmTable:30
  04
-------- ROM-ADDRESS: 0xD255 ---- SIZE       8 ---
+------- ROM-ADDRESS: 0xD239 ---- SIZE       8 ---
 Filling bytes inserted
  0000000000 000000
-------- ROM-ADDRESS: 0xD25D ---- RAM-ADDRESS: 0x2439 ---- SIZE       5 ---
+------- ROM-ADDRESS: 0xD241 ---- RAM-ADDRESS: 0x2433 ---- SIZE       5 ---
 Name of initialized Object : osekConfig_AlarmTable:39
- 0500000001
-------- ROM-ADDRESS: 0xD262 ---- SIZE       4 ---
+ 0500000050
+------- ROM-ADDRESS: 0xD246 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0xD266 ---- RAM-ADDRESS: 0x2442 ---- SIZE       5 ---
+------- ROM-ADDRESS: 0xD24A ---- RAM-ADDRESS: 0x243C ---- SIZE       5 ---
 Name of initialized Object : osekConfig_AlarmTable:48
- 0600000001
-------- ROM-ADDRESS: 0xD26B ---- SIZE       4 ---
+ 0600000060
+------- ROM-ADDRESS: 0xD24F ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0xD26F ---- RAM-ADDRESS: 0x244B ---- SIZE       5 ---
+------- ROM-ADDRESS: 0xD253 ---- RAM-ADDRESS: 0x2445 ---- SIZE       5 ---
 Name of initialized Object : osekConfig_AlarmTable:57
- 0700000001
-------- ROM-ADDRESS: 0xD274 ---- SIZE       4 ---
+ 0700000070
+------- ROM-ADDRESS: 0xD258 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
-------- ROM-ADDRESS: 0xD278 ---- RAM-ADDRESS: 0x2454 ---- SIZE       5 ---
+------- ROM-ADDRESS: 0xD25C ---- RAM-ADDRESS: 0x244E ---- SIZE       5 ---
 Name of initialized Object : osekConfig_AlarmTable:66
- 0800000001
-------- ROM-ADDRESS: 0xD27D ---- SIZE       3 ---
+ 0800000080
+------- ROM-ADDRESS: 0xD261 ---- SIZE       2 ---
 Filling bytes inserted
- 000000
-------- ROM-ADDRESS: 0xD280 ---- RAM-ADDRESS: 0x245C ---- SIZE     254 ---
+ 0000
+------- ROM-ADDRESS: 0xD263 ---- RAM-ADDRESS: 0x2455 ---- SIZE       5 ---
+Name of initialized Object : osekConfig_ResourcePriorityTable:1
+ 1F001F001F
+------- ROM-ADDRESS: 0xD268 ---- SIZE       2 ---
+Filling bytes inserted
+ 0000
+------- ROM-ADDRESS: 0xD26A ---- RAM-ADDRESS: 0x245C ---- SIZE     254 ---
 Name of initialized Object : osekTask_PriorityIndexTable:2
  0101020202 0203030303 0303030304
  0404040404 0404040404 0404040404
@@ -5264,7 +5284,7 @@ Name of initialized Object : osekTask_PriorityIndexTable:2
  0707070707 0707070707 0707070707
  0707070707 0707070707 0707070707
  0707070707 0707070707 07070707
-------- ROM-ADDRESS: 0xD37E ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xD368 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -5275,7 +5295,7 @@ osekConfig_InterruptEntryTable USES Ir_RealTimInt
 _Startup                  USES __SEG_END_SSTACK Init main 
 osekConfig_TaskTable      USES FuncTask1 taskStack FuncTask2 FuncTask3 
                                 FuncTask4 FuncTask5 FuncTask6 FuncTask7 FuncTask8 
-                                FuncTask9 FuncTask10 FuncIdle 
+                                FuncTask9 FuncTask10 
 BSP_TimerInit             USES PLL_Init _PITCFLMT _PITCE _PITMUX _PITINTE 
                                 _PITMTLD0 _PITLD0 
 clearIntFlag              USES _CASE_DIRECT_BYTE _PITTF _ECT_TFLG1 _ECT_TFLG2 
@@ -5530,59 +5550,56 @@ showTaskInfo              USES GetTaskState STRING.task.id...u...4 printf
                                 STRING.taskState..waiting..6 STRING.taskState..ready..7 
                                 STRING.taskState..suspended.8 
 FuncTask1                 USES GetTaskID showLogo 
-                                STRING......................9 printf showTaskInfo 
-                                STRING.task.1.sets.alarms.f.10 osekAlarm_AlarmTable SetRelAlarm 
-                                STRING.task.1.activates.Tas.11 ActivateTask STRING......................12 
-                                TerminateTask 
-FuncTask2                 USES GetTaskID STRING......................13 printf 
-                                showTaskInfo STRING.task2.requests.Resou.14 
-                                osekResource_ResourceTable GetResource STRING.Task.2.activated.by..15 
-                                STRING.task2.releases.Resou.16 ReleaseResource STRING......................17 
-                                TerminateTask 
+                                STRING......................10 printf showTaskInfo osekAlarm_AlarmTable 
+                                SetRelAlarm STRING......................11 TerminateTask 
+FuncTask2                 USES GetTaskID STRING......................12 printf 
+                                showTaskInfo osekResource_ResourceTable GetResource 
+                                STRING.task2.get.resource1..13 STRING.task2.get.resource1..14 ReleaseResource 
+                                STRING.task2.release.resour.15 STRING.task2.release.resour.16 
+                                STRING......................17 TerminateTask 
 FuncTask3                 USES GetTaskID STRING......................18 printf 
-                                showTaskInfo STRING.task3.requests.Resou.19 
-                                osekResource_ResourceTable GetResource STRING.Task.3.activated.by..20 
-                                STRING.task3.releases.Resou.21 ReleaseResource STRING......................22 
-                                TerminateTask 
-FuncTask4                 USES GetTaskID STRING......................23 printf 
-                                showTaskInfo STRING.task4.requests.Resou.24 
-                                osekResource_ResourceTable GetResource STRING.Task.4.activated.by..25 
-                                STRING.task4.releases.Resou.26 ReleaseResource STRING......................27 
-                                TerminateTask 
-FuncTask5                 USES GetTaskID STRING......................28 printf 
-                                showTaskInfo STRING.task5.requests.Resou.29 
-                                osekResource_ResourceTable GetResource STRING.Task.5.activated.by..30 
-                                STRING.task5.releases.Resou.31 ReleaseResource STRING......................32 
-                                TerminateTask 
-FuncTask6                 USES GetTaskID STRING......................33 printf 
-                                showTaskInfo STRING.task6.waiting.for.Ev.34 WaitEvent 
-                                STRING.task6.event.received.35 STRING.task6.requests.Resou.36 
-                                osekResource_ResourceTable GetResource STRING.Task.6.reactivated.b.37 
-                                STRING.task6.releases.Resou.38 ReleaseResource STRING......................39 
-                                TerminateTask 
-FuncTask7                 USES GetTaskID STRING......................40 printf 
-                                showTaskInfo STRING.task7.waiting.for.Ev.41 WaitEvent 
-                                STRING.task7.event.received.42 STRING.task7.requests.Resou.43 
-                                osekResource_ResourceTable GetResource STRING.Task.7.reactivated.b.44 
-                                STRING.task7.releases.Resou.45 ReleaseResource STRING......................46 
-                                TerminateTask 
-FuncTask8                 USES GetTaskID STRING......................47 printf 
-                                showTaskInfo STRING.task8.waiting.for.Ev.48 WaitEvent 
-                                STRING.task8.event.received.49 STRING.task8.requests.Resou.50 
-                                osekResource_ResourceTable GetResource STRING.Task.8.reactivated.b.51 
-                                STRING.task8.releases.Resou.52 ReleaseResource STRING......................53 
-                                TerminateTask 
-FuncTask9                 USES GetTaskID STRING......................54 printf 
-                                showTaskInfo STRING.task9.waiting.for.Ev.55 WaitEvent 
-                                STRING.task9.event.received.56 STRING.task9.requests.Resou.57 
-                                osekResource_ResourceTable GetResource STRING.Task.9.reactivated.b.58 
-                                STRING.task9.releases.Resou.59 ReleaseResource STRING......................60 
-                                TerminateTask 
-FuncTask10                USES GetTaskID STRING......................61 printf 
-                                showTaskInfo STRING.task10.requests.Reso.62 
-                                osekResource_ResourceTable GetResource STRING.Task.10.activated.di.63 
-                                STRING.task10.releases.Reso.64 ReleaseResource STRING......................65 
-                                TerminateTask 
+                                showTaskInfo osekResource_ResourceTable GetResource 
+                                STRING.task3.get.resource2..19 STRING.task3.get.resource2..20 ReleaseResource 
+                                STRING.task3.release.resour.21 STRING.task3.release.resour.22 
+                                STRING......................23 TerminateTask 
+FuncTask4                 USES GetTaskID STRING......................24 printf 
+                                osekResource_ResourceTable GetResource STRING.task4.get.resource3..25 
+                                STRING.task4.get.resource3..26 ReleaseResource STRING.task4.release.resour.27 
+                                STRING.task4.release.resour.28 STRING......................29 TerminateTask 
+FuncTask5                 USES GetTaskID STRING......................30 printf 
+                                showTaskInfo osekResource_ResourceTable GetResource 
+                                STRING.task5.get.resource1..31 STRING.task5.get.resource1..32 ReleaseResource 
+                                STRING.task5.release.resour.33 STRING.task5.release.resour.34 
+                                STRING......................35 TerminateTask 
+FuncTask6                 USES GetTaskID STRING.task6.wait.event..0x.36 printf 
+                                WaitEvent GetEvent STRING.task6.get.event...d..37 
+                                ClearEvent STRING......................38 showTaskInfo 
+                                osekResource_ResourceTable GetResource STRING.task6.get.resource2..39 
+                                STRING.task6.get.resource2..40 ReleaseResource STRING.task6.release.resour.41 
+                                STRING.task6.release.resour.42 STRING......................43 TerminateTask 
+FuncTask7                 USES GetTaskID STRING.task7.wait.event..0x.44 printf 
+                                WaitEvent GetEvent STRING.task7.get.event...d..45 
+                                ClearEvent STRING......................46 showTaskInfo 
+                                osekResource_ResourceTable GetResource STRING.task7.get.resource3..47 
+                                STRING.task7.get.resource3..48 ReleaseResource STRING.task7.release.resour.49 
+                                STRING.task7.release.resour.50 STRING......................51 TerminateTask 
+FuncTask8                 USES GetTaskID STRING.task8.wait.event..0x.52 printf 
+                                WaitEvent GetEvent STRING.task8.get.event...d..53 
+                                ClearEvent STRING......................54 showTaskInfo 
+                                osekResource_ResourceTable GetResource STRING.task8.get.resource1..55 
+                                STRING.task8.get.resource1..56 ReleaseResource STRING.task8.release.resour.57 
+                                STRING.task8.release.resour.58 STRING......................59 TerminateTask 
+FuncTask9                 USES GetTaskID STRING.task9.wait.event..0x.60 printf 
+                                WaitEvent GetEvent STRING.task9.get.event...d..61 
+                                ClearEvent STRING......................62 showTaskInfo 
+                                osekResource_ResourceTable GetResource STRING.task9.get.resource2..63 
+                                STRING.task9.get.resource2..64 ReleaseResource STRING.task9.release.resour.65 
+                                STRING.task9.release.resour.66 STRING......................67 TerminateTask 
+FuncTask10                USES GetTaskID STRING......................68 printf 
+                                showTaskInfo osekResource_ResourceTable GetResource 
+                                STRING.task10.get.resource3.69 STRING.task10.get.resource3.70 ReleaseResource 
+                                STRING.task10.release.resou.71 STRING.task10.release.resou.72 
+                                STRING......................73 TerminateTask 
 SetAlarm                  USES osekCounter_CounterTable osekAlarm_Check2 
                                 osekTask_Dispatch 
 SetRelAlarm               USES SetRelAlarm osekCounter_CounterTable _LINC 
@@ -5597,9 +5614,12 @@ CounterTrigger            USES osekCounter_CounterTable _LINC osekAlarm_Check1
 osekCounter_Initialize    USES osekCounter_CounterTable 
                                 osekConfig_CounterTable _COPY 
 osekEvent_SetEvent        USES _LCMP osekTask_WakeTask 
+ClearEvent                USES osekTask_RunningTask osekInterrupt_NestedLevl 
+                                _LCOM 
 WaitEvent                 USES osekTask_RunningTask 
                                 osekTask_SchedulerLockLevel osekInterrupt_NestedLevl _LCMP 
                                 osekTask_WaitTask 
+GetEvent                  USES osekTask_TaskTable 
 StartOS                   USES osekExecution_CurrentAppMode 
                                 osekTask_Initialize osekInterrupt_Initialize 
                                 osekCounter_Initialize osekAlarm_Initialize osekResource_Initialize 
@@ -5630,8 +5650,6 @@ osekTask_WakeTask         USES AddaReadyBlock osekTask_RunningTask
 osekTask_WaitTask         USES osekTask_RunningTask MoveTaskFromReadyTable 
                                 ReleaseReadyBlock osekTask_ReadyTaskTable _BSHL 
                                 osekTask_PriorityBitMap osekTask_PriorityBitMapMajor osekTask_Dispatch 
-ActivateTask              USES osekTask_TaskTable osekTask_ActiveTask 
-                                osekTask_Dispatch 
 TerminateTask             USES osekTask_RunningTask 
                                 osekTask_SchedulerLockLevel osekInterrupt_NestedLevl 
                                 MoveTaskFromReadyTable ReleaseReadyBlock osekTask_ReadyTaskTable 
@@ -5744,12 +5762,6 @@ DEPENDENCY TREE
  |     |  |  |  |        |  
  |     |  |  |  |        +- osekTarget_RestoreContext
  |     |  |  |  |             
- |     |  |  |  +- ActivateTask        
- |     |  |  |  |  | 
- |     |  |  |  |  +- osekTask_ActiveTask  (see above)
- |     |  |  |  |  |  
- |     |  |  |  |  +- osekTask_Dispatch    (see above)
- |     |  |  |  |     
  |     |  |  |  +- TerminateTask       
  |     |  |  |     | 
  |     |  |  |     +- MoveTaskFromReadyTable
@@ -5816,8 +5828,6 @@ DEPENDENCY TREE
  |     |  |  |  |  
  |     |  |  |  +- printf               (see above)
  |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
  |     |  |  |  +- GetResource          (see above)
  |     |  |  |  |  
  |     |  |  |  +- ReleaseResource      (see above)
@@ -5844,8 +5854,6 @@ DEPENDENCY TREE
  |     |  |  |  |  
  |     |  |  |  +- printf               (see above)
  |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
  |     |  |  |  +- WaitEvent           
  |     |  |  |  |  | 
  |     |  |  |  |  +- _LCMP                (see above)
@@ -5860,6 +5868,14 @@ DEPENDENCY TREE
  |     |  |  |  |     |  
  |     |  |  |  |     +- osekTask_Dispatch    (see above)
  |     |  |  |  |        
+ |     |  |  |  +- GetEvent            
+ |     |  |  |  |    
+ |     |  |  |  +- ClearEvent          
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- _LCOM               
+ |     |  |  |  |       
+ |     |  |  |  +- showTaskInfo         (see above)
+ |     |  |  |  |  
  |     |  |  |  +- GetResource          (see above)
  |     |  |  |  |  
  |     |  |  |  +- ReleaseResource      (see above)
@@ -5872,9 +5888,13 @@ DEPENDENCY TREE
  |     |  |  |  |  
  |     |  |  |  +- printf               (see above)
  |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
  |     |  |  |  +- WaitEvent            (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- GetEvent             (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- ClearEvent           (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- showTaskInfo         (see above)
  |     |  |  |  |  
  |     |  |  |  +- GetResource          (see above)
  |     |  |  |  |  
@@ -5888,9 +5908,13 @@ DEPENDENCY TREE
  |     |  |  |  |  
  |     |  |  |  +- printf               (see above)
  |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
  |     |  |  |  +- WaitEvent            (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- GetEvent             (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- ClearEvent           (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- showTaskInfo         (see above)
  |     |  |  |  |  
  |     |  |  |  +- GetResource          (see above)
  |     |  |  |  |  
@@ -5904,9 +5928,13 @@ DEPENDENCY TREE
  |     |  |  |  |  
  |     |  |  |  +- printf               (see above)
  |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
  |     |  |  |  +- WaitEvent            (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- GetEvent             (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- ClearEvent           (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- showTaskInfo         (see above)
  |     |  |  |  |  
  |     |  |  |  +- GetResource          (see above)
  |     |  |  |  |  
@@ -5915,21 +5943,19 @@ DEPENDENCY TREE
  |     |  |  |  +- TerminateTask        (see above)
  |     |  |  |     
  |     |  |  +- FuncTask10          
- |     |  |  |  | 
- |     |  |  |  +- GetTaskID            (see above)
- |     |  |  |  |  
- |     |  |  |  +- printf               (see above)
- |     |  |  |  |  
- |     |  |  |  +- showTaskInfo         (see above)
- |     |  |  |  |  
- |     |  |  |  +- GetResource          (see above)
- |     |  |  |  |  
- |     |  |  |  +- ReleaseResource      (see above)
- |     |  |  |  |  
- |     |  |  |  +- TerminateTask        (see above)
- |     |  |  |     
- |     |  |  +- FuncIdle            
- |     |  |       
+ |     |  |     | 
+ |     |  |     +- GetTaskID            (see above)
+ |     |  |     |  
+ |     |  |     +- printf               (see above)
+ |     |  |     |  
+ |     |  |     +- showTaskInfo         (see above)
+ |     |  |     |  
+ |     |  |     +- GetResource          (see above)
+ |     |  |     |  
+ |     |  |     +- ReleaseResource      (see above)
+ |     |  |     |  
+ |     |  |     +- TerminateTask        (see above)
+ |     |  |        
  |     |  +- _COPY               
  |     |  |    
  |     |  +- AddaReadyBlock       (see above)
@@ -6677,5 +6703,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 121
-Total size of all blocks to be downloaded: 10479
+Total size of all blocks to be downloaded: 10849
 
