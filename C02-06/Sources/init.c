@@ -104,7 +104,7 @@ TASK(ini_LLD)
 	showLogo();
 	printf("ini_LLD running: initialize low level drivers\n");
 	StartCOM();
-	SetRelAlarm(Alarm100ms, TICK_100MS, 0);
+	SetRelAlarm(Alarm100ms, TICK_100MS, TICK_100MS);
 	printf("ini_LLD set Alarm100ms for 100msTask\n");
 	ActivateTask(HLS_ini);
 	TerminateTask();
@@ -113,7 +113,7 @@ TASK(ini_LLD)
 TASK(HLS_ini)
 {
 	printf("HLS_ini running: initialize HLS stage 1\n");
-	SetRelAlarm(Alarm200ms, TICK_200MS, 0);
+	SetRelAlarm(Alarm200ms, TICK_200MS, TICK_200MS);
 	printf("HLS_ini set Alarm200ms for 200msTask\n");
 	ActivateTask(HLS_ini2);
 	TerminateTask();
@@ -122,7 +122,7 @@ TASK(HLS_ini)
 TASK(HLS_ini2)
 {
 	printf("HLS_ini2 running: initialize HLS stage 2\n");
-	SetRelAlarm(Alarm400ms, TICK_400MS, 0);
+	SetRelAlarm(Alarm400ms, TICK_400MS, TICK_400MS);
 	printf("HLS_ini2 set Alarm400ms for 400msTask\n");
 	ActivateTask(ini_LLD2);
 	TerminateTask();
@@ -131,7 +131,7 @@ TASK(HLS_ini2)
 TASK(ini_LLD2)
 {
 	printf("ini_LLD2 running: finalize initialization\n");
-	SetRelAlarm(Alarm1000ms, TICK_1000MS, 0);
+	SetRelAlarm(Alarm1000ms, TICK_1000MS, TICK_1000MS);
 	printf("ini_LLD2 set Alarm1000ms for 1000msTask\n");
 	TerminateTask();
 }
@@ -255,3 +255,4 @@ TASK(comTask4)
 	receiveComMessage(Msg4, "comTask4");
 	TerminateTask();
 }
+
